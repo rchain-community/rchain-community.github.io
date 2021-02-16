@@ -90,7 +90,7 @@
             >
 
             <a
-              href="https://github.com/rholang/rchain-community.github.io"
+              href="https://github.com/rchain-community/rchain-community.github.io"
               rel="noopener noreferrer"
               target="_blank"
               >Rholang Website</a
