@@ -17,7 +17,7 @@
     "clipboard-copy": "^3.0.0",
     "docsearch.js": "^2.6.2",
     "gh-pages": "^2.2.0",
-    "gridsome": "0.7.14",
+    "gridsome": "0.7.23",
     "marked": "^0.6.1",
     "remark-attr": "^0.11.1",
     "typography": "^0.16.18",

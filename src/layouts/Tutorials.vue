@@ -88,7 +88,7 @@ export default {
       let path = this.currentPath;
       if ((path.match(new RegExp('/', 'g')) || []).length == 1)
         path = path + '/introduction';
-      return `https://github.com/rholang/rchain-community.github.io/tree/source/content${path}.md`;
+      return `https://github.com/rchain-community/rchain-community.github.io/tree/source/content${path}.md`;
     },
     items() {
       return this.links.reduce(
