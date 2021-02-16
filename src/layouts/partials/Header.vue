@@ -41,53 +41,60 @@
             title="Rchain @ GitHub"
           >
             <github-logo height="20px" width="20px" />
-            <span
-              class="hide-for-small"
-              style="margin-left:5px;"
-            >v{{ $static.metadata.gridsomeVersion }}</span>
+            <span class="hide-for-small" style="margin-left:5px;"
+              >v{{ $static.metadata.gridsomeVersion }}</span
+            >
           </a>
           <div class="dropdown">
             <a
               href="//github.com/rchain/rchain"
               rel="noopener noreferrer"
               target="_blank"
-            >Core Repository</a>
+              >Core Repository</a
+            >
             <a
               href="https://github.com/rchain-community"
               rel="noopener noreferrer"
               target="_blank"
-            >Rchain Community</a>
+              >Rchain Community</a
+            >
             <a
               href="https://github.com/tgrospic/rnode-client-js"
               rel="noopener noreferrer"
               target="_blank"
-            >RNode Client</a>
+              >RNode Client</a
+            >
             <a
               href="https://github.com/fabcotech/rchain-toolkit"
               rel="noopener noreferrer"
               target="_blank"
-            >Rchain Toolkit</a>
+              >Rchain Toolkit</a
+            >
             <a
               href="https://github.com/arvinxx/my-rchain-wallet"
               rel="noopener noreferrer"
               target="_blank"
-            >MyRchainWallet</a>
+              >MyRchainWallet</a
+            >
             <a
               href="https://github.com/imphila/Capo"
               rel="noopener noreferrer"
               target="_blank"
-            >Capo Mobile App</a>
+              >Capo Mobile App</a
+            >
             <a
               href="https://github.com/dimworm/rui"
               rel="noopener noreferrer"
               target="_blank"
-            >Rui锐 Chrome Wallet</a>
+              >Rui锐 Chrome Wallet</a
+            >
 
             <a
-              href="https://github.com/rholang/rholang.github.io"
+              href="https://github.com/rholang/rchain-community.github.io"
               rel="noopener noreferrer"
               target="_blank"
-            >Rholang Website</a>
+              >Rholang Website</a
+            >
           </div>
         </div>
       </nav>
@@ -104,14 +111,14 @@ query {
 </static-query>
 
 <script>
-import Logo from "./Logo";
-import Nav from "./Nav";
-import SearchForm from "@/components/SearchForm.vue";
-import ToggleTheme from "@/components/ToggleTheme.vue";
-import GithubLogo from "@/assets/images/github-logo.svg";
-import TwitterLogo from "@/assets/images/twitter-logo.svg";
-import DiscordLogo from "@/assets/images/discord-logo.svg";
-import LazyHydrate from "vue-lazy-hydration";
+import Logo from './Logo';
+import Nav from './Nav';
+import SearchForm from '@/components/SearchForm.vue';
+import ToggleTheme from '@/components/ToggleTheme.vue';
+import GithubLogo from '@/assets/images/github-logo.svg';
+import TwitterLogo from '@/assets/images/twitter-logo.svg';
+import DiscordLogo from '@/assets/images/discord-logo.svg';
+import LazyHydrate from 'vue-lazy-hydration';
 
 export default {
   components: {
@@ -122,8 +129,8 @@ export default {
     DiscordLogo,
     SearchForm,
     Nav,
-    LazyHydrate
-  }
+    LazyHydrate,
+  },
 };
 </script>
 

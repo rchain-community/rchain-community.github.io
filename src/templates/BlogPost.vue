@@ -66,7 +66,7 @@ export default {
       return path;
     },
     getBaseUrl() {
-      return 'https://rholang.github.io';
+      return 'https://rchain-community.github.io';
     },
   },
   metaInfo() {

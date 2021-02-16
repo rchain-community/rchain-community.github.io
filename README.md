@@ -1,6 +1,6 @@
 # Rholang 🥳
 
-This is the repository of the website [https://rholang.github.io/](https://rholang.github.io/).
+This is the repository of the website [https://rchain-community.github.io/](https://rchain-community.github.io/).
 
 # Pre-requisites
 
@@ -12,7 +12,7 @@ This is the repository of the website [https://rholang.github.io/](https://rhola
 
 # Quick install
 
-- fork this repository and open with vscode (cd into /rholang.github.io/)
+- fork this repository and open with vscode (cd into /rchain-community.github.io/)
 - \$ yarn install
 - \$ yarn develop
   - website is locally available

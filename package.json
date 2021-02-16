@@ -1,7 +1,7 @@
 {
   "private": true,
   "version": "1.0.0",
-  "name": "rholang.github.io",
+  "name": "rchain-community.github.io",
   "scripts": {
     "develop": "gridsome develop",
     "explore": "gridsome explore",

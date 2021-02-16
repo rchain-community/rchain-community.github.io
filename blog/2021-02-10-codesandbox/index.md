@@ -9,6 +9,6 @@ excerpt: 'Write your own dapps is now easier than ever. Use Codesandbox.io with 
 
 # Getting started
 
-To see the dapp tutorial visit [dapp tutorial](https://rholang.github.io/dapps/intro-dapps).
+To see the dapp tutorial visit [dapp tutorial](https://rchain-community.github.io/dapps/intro-dapps).
 
 ![view](./images/rho-view.png)
