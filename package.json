@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "rholang.github.io",
+  "scripts": {
+    "develop": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b master -d dist"
+  },
+  "dependencies": {
+    "@noxify/gridsome-plugin-remark-embed": "^1.1.5",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "algoliasearch": "^3.32.0",
+    "babel-runtime": "^6.26.0",
+    "clipboard-copy": "^3.0.0",
+    "docsearch.js": "^2.6.2",
+    "gh-pages": "^2.2.0",
+    "gridsome": "0.7.14",
+    "marked": "^0.6.1",
+    "remark-attr": "^0.11.1",
+    "typography": "^0.16.18",
+    "vue-atlas": "^2.1.8",
+    "vue-instantsearch": "^2.0.0",
+    "vue-lazy-hydration": "^1.0.0-beta.7",
+    "vue-popover": "^1.6.2",
+    "vue-scrollto": "^2.13.0"
+  },
+  "devDependencies": {
+    "@gridsome/remark-prismjs": "^0.3.0",
+    "@gridsome/source-filesystem": "^0.6.0",
+    "@gridsome/transformer-remark": "^0.6.4",
+    "@gridsome/vue-remark": "^0.2.2",
+    "execa": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "js-yaml": "^3.13.1",
+    "node-sass": "^4.9.3",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "svg-to-vue-component": "^0.2.2",
+    "vue-cli-plugin-vuetify": "^2.0.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

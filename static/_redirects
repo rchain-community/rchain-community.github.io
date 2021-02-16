@@ -1,0 +1,14 @@
+/content/data-paginate-queries /content/pagination 301
+/content/image /content/images 301
+/content/link /content/linking 301
+/content/contribute /content/how-to-contribute 301
+/content/basic-config /content/config 301
+/content/data-query-data /content/querying-data 301
+/content/data-source-plugin /content/fetching-data
+/content/data-custom /content/fetching-data 301
+/content/install-plugins /content/plugins 301
+/content/site-meta-data /content/metadata 301
+/content/routing /content/templates 301
+
+/plugins /plugins/_id_star.html 200
+/plugins/* /plugins/_id_star.html 200

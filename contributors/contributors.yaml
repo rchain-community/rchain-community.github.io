@@ -1,0 +1,5 @@
+- id: test
+  name: test
+  bio: "test"
+  avatar: ./images/avatar.jpg
+  twitter: "test"

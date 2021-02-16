@@ -1,0 +1,51 @@
+- title: Tutorials
+  items:
+    - title: Beginners Tutorial
+      link: /tutorials/
+    - title: Sending
+      link: /tutorials/sending/
+    - title: Receiving
+      link: /tutorials/receiving/
+    - title: Names and Processes
+      link: /tutorials/names-and-processes/
+    - title: Send and Peek
+      link: /tutorials/send-and-peek/
+    - title: Join
+      link: /tutorials/join/
+    - title: Unforgable Names
+      link: /tutorials/unforgable-names/
+    - title: Bundles Interpolation
+      link: /tutorials/bundles-interpolation/
+    - title: State Channels
+      link: /tutorials/state-channels
+    - title: Object Capabilities
+      link: /tutorials/object-capabilities/
+    - title: Additional Syntax
+      link: /tutorials/additional-syntax/
+    - title: Pattern Matching
+      link: /tutorials/pattern-matching/
+    - title: Data Structures
+      link: /tutorials/data-structures/
+    - title: Recursion
+      link: /tutorials/recursion/
+    - title: Game Example
+      link: /tutorials/game-example/
+    - title: Off Chain
+      link: /tutorials/off-chain/
+    - title: Cheat Sheet
+      link: /tutorials/cheat-sheet/
+
+- title : Rho Lambda
+  items:
+    - title: Introduction
+      link: /tutorials/introduction/
+    - title: Booleans
+      link: /tutorials/boolean/
+    - title: Church Numerals
+      link: /tutorials/church/
+    - title: Linked List
+      link: /tutorials/linked/
+    - title: Notation
+      link: /tutorials/notation/
+    - title: Conway
+      link: /tutorials/conway/

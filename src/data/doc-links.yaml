@@ -1,0 +1,80 @@
+- title: Development
+  items:
+    - title: Development
+      link: /docs/
+    - title: Network Configuration
+      link: /docs/network-configuration/
+    - title: Installing RNode
+      link: /docs/installing-rnode/
+    - title: Running RNode (non-Docker)
+      link: /docs/running-rnode/
+    - title: Running RNode (Docker)
+      link: /docs/running-rnode-docker/
+
+- title: Rholang
+  items:
+    - title: Rholang
+      link: /docs/rholang/
+    - title: Names and Processes
+      link: /docs/names-processes/
+    - title: Expressions
+      link: /docs/expressions/
+    - title: Sending and Receiving
+      link: /docs/send-receive/
+    - title: Pattern matching
+      link: /docs/pattern-match/
+    - title: Iteration
+      link: /docs/iteration/
+    - title: Design patterns
+      link: /docs/design-patterns/
+    - title: Cost accounting
+      link: /docs/rholang-cost-accounting
+
+- title: RNode
+  items:
+    - title: Commands for RNode
+      link: /docs/commands/
+    - title: Deploy a Rholang contract
+      link: /docs/deploy-contract/
+    - title: Propose a block to the blockchain
+      link: /docs/propose-block/
+    - title: Check block finalization
+      link: /docs/block-finalization/
+
+- title: Rspace
+  items:
+    - title: Overview
+      link: /docs/rspace-intro/
+    - title: Implementation
+      link: /docs/rspace-tut/
+
+- title: Validator
+  items:
+    - title: Current state of the protocol
+      link: /docs/cbc-protocol/
+    - title: What are Validators
+      link: /docs/bonding-network/
+    - title: Run a Standalone Validator
+      link: /docs/bonding-validator/
+    - title: Run a Rchain Network (docker)
+      link: /docs/rchain-network-docker/
+    - title: Run a Rchain Network (terraform)
+      link: /docs/rchain-network-terraform/
+
+- title: Shards
+  items:
+    - title: Sharding Proposal
+      link: /docs/sharding-proposal/
+    - title: Sharding Definitions
+      link: /docs/sharding-definitions/
+    - title: Sharding Localized Processes
+      link: /docs/sharding-localized/
+    - title: Powerset Shards
+      link: /docs/powerset-shards/
+
+- title: Research
+  items:
+    - title: Research
+      link: /docs/research/
+    - title: History Blockchain
+      link: /docs/history-blockchain/
