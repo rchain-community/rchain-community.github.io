@@ -167,8 +167,6 @@ header {
     backdrop-filter: blur(4px);
   }
 
-  @media screen and (min-width: 992px) and (-webkit-max-device-pixel-ratio: 1) {
-    backdrop-filter: blur(4px);
-  }
+
 }
 </style>
