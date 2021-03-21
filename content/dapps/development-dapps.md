@@ -1,6 +1,6 @@
-# Build Dapps
+# Build DApps
 
-Dapps are a growing oppurtunity for disrupting decentralized applications. With this tutorial you learn to create a wallet. Get free testnet tokens for your wallet and make a smart contract deploy on testnet.
+DApps are a growing oppurtunity for disrupting decentralized applications. With this tutorial you learn to create a walt free testnet tokens for your wallet and make a smart contract deploy on testnet.
 
 ## Create a wallet
 
