@@ -6,7 +6,7 @@
     <g-link to="/tutorials">
       <span class="main-nav__label">Tutorials</span>
     </g-link>
-    <g-link to="/dapps/intro-dapps">
+    <g-link to="/dapps">
       <span class="main-nav__label">dApps</span>
     </g-link>
     <g-link to="/blog/">

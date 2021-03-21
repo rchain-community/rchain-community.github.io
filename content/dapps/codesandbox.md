@@ -1,6 +1,6 @@
-# Build Dapps
+# Use Codesandbox for your dApp
 
-Dapps are a growing oppurtunity for disrupting decentralized applications. This tutorial should help you to build Dapps by your own and deploy them to the network with the use of Codesandbox.io. Use this [codesandbox template](https://codesandbox.io/s/rholang-template-jd55p?file=/src/rholang/rho.js) to start.
+This tutorial should help you to build Dapps by your own and deploy them to the network with the use of Codesandbox.io. Use this [codesandbox template](https://codesandbox.io/s/rholang-template-jd55p?file=/src/rholang/rho.js) to start.
 
 Codesandbox.io advantages for your Dapp development:
 
