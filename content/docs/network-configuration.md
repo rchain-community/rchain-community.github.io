@@ -49,6 +49,7 @@ At a high level, you should:
 
 <br><br/>
 
+<div style='overflow-x:auto'>
 <table>
   <tr>
     <th>Device</th>
@@ -63,6 +64,7 @@ At a high level, you should:
     <td>40400-40430</td>
   </tr>
 </table>
+</div>
 
 ## Running Docker
 
