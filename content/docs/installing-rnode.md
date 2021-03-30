@@ -79,5 +79,4 @@ Although it is simple to install RNode in Docker, it is important to have an und
 
 ## ARM
 
-ARM
 You can run RNode on Raspberry pi. An example of this, including installation and deployment instructions, is available at [https://github.com/kayvank/arm-rnode](https://github.com/kayvank/arm-rnode).
