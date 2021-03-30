@@ -2,5 +2,7 @@
   items:
     - title: Build DApps
       link: /dapps/
-    - title: Use codesandbox
+    - title: Rholang on Codesandbox
       link: /dapps/codesandbox/
+    - title: Rholang VSCode Extension
+      link: /dapps/vscode-extension/

@@ -1,4 +1,4 @@
-# Use Codesandbox for your dApp
+# Evaluate rholang code online
 
 This tutorial should help you to build Dapps by your own and deploy them to the network with the use of Codesandbox.io. Use this [codesandbox template](https://codesandbox.io/s/rholang-template-jd55p?file=/src/rholang/rho.js) to start.
 
