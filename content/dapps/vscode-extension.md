@@ -1,6 +1,6 @@
 # Evaluate rholang code offline
 
-The evaluation of rholang code is done on a rnode client. This tutorial explains how to setup everything to run rholang code in VSCode with the use of a rholang [extension](https://tgrospic.github.io/rnode-client-js/)
+The evaluation of rholang code is done on a rnode client. This tutorial explains how to setup everything to run rholang code in VSCode with the use of a rholang [extension](https://marketplace.visualstudio.com/vscode)
 
 ## Install the rholang extension in VSCode
 
@@ -15,19 +15,15 @@ Windows 10
    If the docker logo ist red, then there is a docker problem with your pc (sometimes wsl_update_x64.msi has to be additionaly installed).
    ![vscode1](./images/vscode-1.png)
 
-4. Open a CMD Command Prompt and enter: docker pull rchain/rnode:v0.9.24  
-   The rnode image for docker will be downloaded.
-   ![dev2](./images/vscode-2.png)
-
-   > ⚠️ you have to download the rnode v0.9.24 version for docker. Newer version are at the time of writing currently not supported.
-
-5. Install the VSCode extension for rholang. Search for the rholang extension, install it and then got to setting for this extension.
+4. Install the VSCode extension for rholang. Search for the rholang extension, install it and then got to setting for this extension.
    ![dev3](./images/vscode-3.png)
 
-6. The checkbox for Enable Docker and the Rnode Docker Image (rchain/rnode:v0.9.24) have to be set.
+5. The checkbox for Enable Docker and the Rnode Docker Image (rchain/rnode:v0.9.24) have to be set.
    ![dev2](./images/vscode-4.png)
 
-7. Create a new file with the .rho extension. And write some rholang code:
+   > ⚠️ you have to use the rnode v0.9.24 version for docker. Newer version are at the time of writing currently not supported.
+
+6. Create a new file with the .rho extension. And write some rholang code:
 
    ```javascript{numberLines: true}
    new helloworld, stdout(`rho:io:stdout`) in {
@@ -47,9 +43,9 @@ Windows 10
 
    ![dev3](./images/vscode-5.png)
 
-8. Save the hello.rho file with strg+s. After every save the rholang file is evaluated on the rnode instance in docker.
+7. Save the hello.rho file with strg+s. After every save the rholang file is evaluated on the rnode instance in docker.
 
-9. Open a terminal in VSCode, go to OUTPUT and select Rholang in the navbar. The evaluated result of the code in this example is: "Hello World again"
+8. Open a terminal in VSCode, go to OUTPUT and select Rholang in the navbar. The evaluated result of the code in this example is: "Hello World again"
    "Hello World".
 
    ![dev4](./images/vscode-6.png)
