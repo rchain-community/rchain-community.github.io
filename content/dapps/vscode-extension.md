@@ -12,7 +12,7 @@ Windows 10
 1. Install the latest updates for windows 10 and install the latest version of [docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/). Click on **Get Docker** and install it on your pc. Restart the pc.
 2. After restart run the Docker Desktop application.
 3. There has to be a **white** docker logo on the windows taskbar.
-   If the docker logo ist red, then there is a docker problem with your pc (sometimes wsl_update_x64.msi has to be additionaly installed).
+   If the docker logo ist red, then there is a docker problem with your pc (sometimes wsl_update_x64.msi has to be additionally installed).
    ![vscode1](./images/vscode-1.png)
 
 4. Install the VSCode extension for rholang. Search for the rholang extension, install it and then got to setting for this extension.
