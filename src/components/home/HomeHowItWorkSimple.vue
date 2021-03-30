@@ -5,9 +5,15 @@
         <h4>IDEs</h4>
         <ul class="bullet-list mb">
           <li>
-            <a
-              href="https://marketplace.visualstudio.com/items?itemName=tgrospic.rholang"
-            >Visual Studio Code Plugin</a>
+            <a href="https://rchain-community.github.io/dapps/vscode-extension/"
+              >Visual Studio Code Plugin</a
+            >
+          </li>
+          <br />
+          <li>
+            <a href="https://rchain-community.github.io/dapps/codesandbox/"
+              >Codesandbox</a
+            >
           </li>
           <br />
           <li>
@@ -16,7 +22,9 @@
 
           <br />
           <li>
-            <a href="https://github.com/tgrospic/rholang-idea">Intellij Plugin</a>
+            <a href="https://github.com/tgrospic/rholang-idea"
+              >Intellij Plugin</a
+            >
           </li>
         </ul>
 
@@ -34,15 +42,11 @@
         </div>
 
         <ul class="bullet-list mb">
-          <li>
-            <Bullet />complete asynchronous language
-          </li>
+          <li><Bullet />complete asynchronous language</li>
           <li>
             <Bullet />runtime engine written in type safe language (scala)
           </li>
-          <li>
-            <Bullet />concurrency build into the language
-          </li>
+          <li><Bullet />concurrency build into the language</li>
         </ul>
 
         <template slot="outer">
@@ -55,18 +59,10 @@
         <p>propose smart-contract to the global distributed Rchain network</p>
 
         <ul class="bullet-list mb">
-          <li>
-            <Bullet />types of interaction bounded by namespaces
-          </li>
-          <li>
-            <Bullet />sharding for validators
-          </li>
-          <li>
-            <Bullet />asynchronous notification for names in a contract
-          </li>
-          <li>
-            <Bullet />scalable DAG structure (Directed Acyclic Graph)
-          </li>
+          <li><Bullet />types of interaction bounded by namespaces</li>
+          <li><Bullet />sharding for validators</li>
+          <li><Bullet />asynchronous notification for names in a contract</li>
+          <li><Bullet />scalable DAG structure (Directed Acyclic Graph)</li>
         </ul>
       </Card>
     </div>
@@ -74,12 +70,12 @@
 </template>
 
 <script>
-import GraphQlLogo from "~/assets/images/graphql-logo.svg";
-import VueLogo from "~/assets/images/vue-logo.svg";
-import WebpackLogo from "~/assets/images/webpack-logo.svg";
-import RholangLogo from "~/assets/images/rholang-small-white.svg";
-import Bullet from "~/assets/images/bullet.svg";
-import Dots from "~/components/Dots.vue";
+import GraphQlLogo from '~/assets/images/graphql-logo.svg';
+import VueLogo from '~/assets/images/vue-logo.svg';
+import WebpackLogo from '~/assets/images/webpack-logo.svg';
+import RholangLogo from '~/assets/images/rholang-small-white.svg';
+import Bullet from '~/assets/images/bullet.svg';
+import Dots from '~/components/Dots.vue';
 
 export default {
   components: {
