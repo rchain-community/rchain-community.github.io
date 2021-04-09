@@ -29,7 +29,7 @@ DApps are a growing oppurtunity for disrupting decentralized applications. With 
 
 ![dev4](./images/dev-4.png)
 
-6. If you want to transfer you token to anouther account, type an amount into the field and click transfer.
+6. If you want to transfer you token to another account, type an amount into the field and click transfer.
 
 ![dev5](./images/dev-5.png)
 
