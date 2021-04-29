@@ -170,6 +170,4 @@ And coordinator will spawn another coroutine(join(a+b)) to check if the dataum c
 
 Even after persistent layer is added, this model still works well. We can decouple the IO from the execution part. We can have Write-Ahead-Log to write to LMDB without blocking the execution. We only need read once from LMDB for certain name into in-memory tuplespace.
 
-
-
 ![RSpace](./images/rspace-rust-5.png)
