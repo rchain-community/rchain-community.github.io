@@ -45,8 +45,10 @@
   items:
     - title: Overview
       link: /docs/rspace-intro/
-    - title: Implementation
+    - title: Implementation Scala
       link: /docs/rspace-tut/
+    - title: Implementation Rust
+      link: /docs/rspace-tut-rust/
 
 - title: Validator
   items:
