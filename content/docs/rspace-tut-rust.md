@@ -1,7 +1,7 @@
 # A Lockless Tuplespace
 As you may notice in the [performance comparison](https://github.com/wangjia184/rholang-rust/wiki/Performance-Benchmark-with-Scala-Edition,-70-times-faster!) between Scala edition and Rust edition, the latter outperforms ~30x in sequence execution, and when the rholang code can be executed concurrently or parallelly, it outperforms ~70x! That means the Rust edition scales much better. One of the secrets is its distinct lockless tuplespace.
 
-# The Problem
+## The Problem
 
 The tuplespace can be simply seen as a big HashMap. Send (e.g. `name!(Q)`) produces a message to a channel(or name) while receive (e.g. `for( _ <- name )`) consumes one from certain channel. During rholang execution, data race could only happen between produces and consumes within tuplespace. RhoVM only needs to solve race condition in tuplespace and then rholang code can safely execute in parallel without synchronization primitives. That sounds simple but actually not easy.
 
@@ -26,7 +26,7 @@ Produce and consumes can execute parallelly but synchronization cannot be avoide
 **Can we have a tuplespace without lock but still work correctly?**
 
 
-# The Solution
+## The Solution
 
 In the reason of pattern matching, channel(name) must be able to store dataums and continuations. In source code [Transit](https://github.com/wangjia184/rholang-rust/blob/0.0.1/rho_runtime/src/storage/transit.rs#L37-L44) struct is defined to represent the channel.
 
@@ -156,17 +156,21 @@ Also the spawn tasks `await` on the receivers, and perform the actual job when a
 More explaination:
 
 The MPSC queue is only used by coordinator to accept (send/receive) commands from multiple-threaded reduction, Coordinator  does not wait for anything and commands wont be stocked in the queue.  Coordinator picks up the messages from the queue,  it does not care the current status of channels,  Coordinator  only hooks those tasks after the last pipe of the channel.  And the tasks are executed as coroutine, will be waken up when channels are ready.
-> Suppose  channel `a` is being consumed by  `for( _ <- a; _ <- b)`    and `for( _ <- a; _ <- c)`.  so there are two joined consumers for channels `a+b` and channels `a+c`
+
+Suppose  channel `a` is being consumed by  `for( _ <- a; _ <- b)`    and `for( _ <- a; _ <- c)`.  so there are two joined consumers for channels `a+b` and channels `a+c`
 When sending dataum to `a`,  Coordinator first hook a coroutine(`handle_produce`) only on `a`, and the coroutine will be executed when `a` is ready. 
 When this coroutine executes, it only gains the access to channel `a`,  but that does not matter.
 It first tries to match any independent consumer, if independent consumer matchs,  no need to continue.
->When it detects that no independent consumer can be matched it stores the dataum in channel.
+
+When it detects that no independent consumer can be matched it stores the dataum in channel.
 Then it checks the joined consumers - if the dataum can be matched with `a` in `a+b` or `a+c`.
 It does not care if `b` or `c` can be matched at this moment (actually it can't because it does not gain the access).
 If dataum can be partially matched, let's say a+b's a,  it sends another join(a+b) command to coordinator.
 And coordinator will spawn another coroutine(join(a+b)) to check if the dataum can be matched in a+b since the second corouting gain access to both channels; If still it cant be matched, and it found dataum can match a+c's a,  it sends another command to coordinator to spawn `join(a+c)`
->The idea is:  the consumers in a channel could be very complicated,  different patterns,  different channels.   We should not try to complete all the matching within a single coroutine execution since that would enlarge the critical section and gained channels more than we need.  We'd better distribute the matching job into different coroutines, and each of them only gains the access to minimal required channels. The coroutines are very lighweight so they run very fast. Still between their execution, there could be other coroutines hooked to these channels by coordinator. So the others still can access the channels and they can send/receive as usual. that ensures the system overall throughput.
-# Looking Ahead
+
+The idea is:  the consumers in a channel could be very complicated,  different patterns,  different channels.   We should not try to complete all the matching within a single coroutine execution since that would enlarge the critical section and gained channels more than we need.  We'd better distribute the matching job into different coroutines, and each of them only gains the access to minimal required channels. The coroutines are very lighweight so they run very fast. Still between their execution, there could be other coroutines hooked to these channels by coordinator. So the others still can access the channels and they can send/receive as usual. that ensures the system overall throughput.
+
+## Looking Ahead
 
 Even after persistent layer is added, this model still works well. We can decouple the IO from the execution part. We can have Write-Ahead-Log to write to LMDB without blocking the execution. We only need read once from LMDB for certain name into in-memory tuplespace.
 
