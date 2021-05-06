@@ -49,3 +49,7 @@ Windows 10
    "Hello World".
 
    ![dev4](./images/vscode-6.png)
+
+   > ⚠️ If you get the following errors in your console:  
+   > *docker: Error response from daemon: open \\.\pipe\docker_engine_linux* or   
+   *docker: Error response from daemon: status code not OK but 500:* then wait and restart vscode again.
