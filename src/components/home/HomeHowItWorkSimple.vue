@@ -17,7 +17,7 @@
           </li>
           <br />
           <li>
-            <a href="https://try-rholang-22.netlify.app/">RChain Cloud</a>
+            <a href="https://rgov.rhobot.net/">RChain Cloud</a>
           </li>
 
           <br />
