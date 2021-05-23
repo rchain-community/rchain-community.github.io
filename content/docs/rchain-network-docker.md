@@ -43,11 +43,12 @@ To start only a standalone node (container `rnode.bootstrap`)
 ### [OPTIONAL] Enable automatic block creation
 
 Make sure shard is up and running and all nodes printed `Making a transition to Running state.`, which means Casper instance is ready to accept connections.
-
+```bash
     $ docker-compose -f ./propose.yml up
-
+```
 ### [OPTIONAL] Start an observer node
 
 Observer nodes are same as validators but started without private key provided, so they cannot sign and propose blocks. Such instances allow execution of so-called `exploratory deploys` to query the state of the DAG.
-
+```bash
     $ docker-compose -f ./read-only.yml up
+```
