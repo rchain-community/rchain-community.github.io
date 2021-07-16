@@ -12,5 +12,5 @@
   items:
     - title: Setup docker node
       link: /dapps/setup-docker/
-    - title: Build large Dapps
+    - title: Build large dApps
       link: /dapps/setup-sdk/
