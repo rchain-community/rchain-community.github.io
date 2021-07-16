@@ -7,8 +7,7 @@ This document describes how to setup a docker rnode instance on your local compu
 The rnode docker instance is running on Windows, Linux, Mac. This tutorial describes the installing process for windows, but other operating systems are similar to setup.
 
 **Prerequisites:**
-
-- Windows 10
+Windows 10, Linux, Mac
 
 1. Install the latest updates for windows 10 and install the latest version of [docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/). Click on **Get Docker** and install it on your pc. Restart the pc.
 2. There has to be a **white** docker logo on the windows taskbar.

@@ -14,7 +14,7 @@ This chapter describes how you can use the rholang-sdk as a template for your we
 The SDK works with Windows, Linux, Mac. This tutorial describes the setup process for windows.
 
 **Prerequisites:**
-Windows 10
+Windows 10, Linux, Mac
 
 **Optional, but recommended:**  
 Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
