@@ -19,7 +19,7 @@ Windows 10, Linux, Mac
 **Optional, but recommended:**  
 Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
 
-1. Download the dApp template from here [nft-template](https://github.com/rholang/nft), extract it and open it in vscode.
+1. Download the dApp template from here: [nft-template](https://github.com/rholang/nft), extract it and open it in vscode.
 2. Open a terminal and install **pnpm** globally (like yarn, but faster, better workspaces support)
 
 ```javascript
