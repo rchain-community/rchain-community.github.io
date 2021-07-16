@@ -40,14 +40,6 @@ the following chapter provides you with the information for setting up REPL with
 - download genesis folder from [genesis folder](https://github.com/rchain-community/rchain-docker-shard/tree/master/genesis)
 - create a folder (e.g on desktop -> C:/Users/Nakamoto/Rnode/)
 - copy genesis folder from download (unzip) into rnode folder (e.g C:/Users/Nakamoto/Rnode/genesis)
-- if docker has started -> open docker settings (small icon on right bottom on windows)
-
-![windows-bar](./images/bottom-bar.png)
-
-- add folder on desktop to docker resource
-
-![settings-docker](./images/settings.png)
-
 - open command line
   - cmd1: `$ docker pull rchain/rnode:latest`
 

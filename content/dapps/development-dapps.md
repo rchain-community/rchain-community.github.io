@@ -1,4 +1,4 @@
-# Build DApps
+# Getting started
 
 DApps are a growing oppurtunity for disrupting decentralized applications. With this tutorial you learn to create a wallet and get free testnet tokens.
 

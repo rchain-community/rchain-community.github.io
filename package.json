@@ -35,9 +35,9 @@
     "execa": "^1.0.0",
     "fs-extra": "^7.0.1",
     "js-yaml": "^3.13.1",
-    "node-sass": "^4.9.3",
+    "node-sass": "latest",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^10",
     "svg-to-vue-component": "^0.2.2",
     "vue-cli-plugin-vuetify": "^2.0.3",
     "webpack-node-externals": "^1.7.2"

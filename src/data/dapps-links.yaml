@@ -1,8 +1,16 @@
-- title: DApp Development
+- title: Introduction
   items:
-    - title: Build DApps
+    - title: Getting started
       link: /dapps/
-    - title: Rholang on Codesandbox
+- title: Development environments
+  items:
+    - title: Codesandbox
       link: /dapps/codesandbox/
-    - title: Rholang VSCode Extension
+    - title: VSCode Extension
       link: /dapps/vscode-extension/
+- title: Rholang SDK
+  items:
+    - title: Setup docker node
+      link: /dapps/setup-docker/
+    - title: Build large Dapps
+      link: /dapps/setup-sdk/
