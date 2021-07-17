@@ -1,6 +1,6 @@
 # Running RNode (Docker)
 
-This chapter helps you to start a rnode instance. With this you are connecting to existing validator on mainnet, testnet or creating a local network on your computer.
+This chapter helps you to start a rnode instance. With this you are connecting to existing validator on mainnet, testnet. Additionally you can creating a local network on your computer, where you can deploy your smart-contracts to.
 
 ## Docker Setup (Beginners)
 
