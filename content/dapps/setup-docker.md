@@ -39,7 +39,7 @@ Make sure you go two folders deep if you have extracted the folder (rnode-client
 > $ netsh interface ipv4 show excludedportrange protocol=tcp
 > $ net stop winnat
 > $ netsh int ipv4 add excludedportrange protocol=tcp startport=50400 numberofports=10
-> $netsh int ipv4 add excludedportrange protocol=tcp startport=60400 numberofports=10numberofports=10
+> $netsh int ipv4 add excludedportrange protocol=tcp startport=60400 numberofports=10
 > $net start winnat
 > ```
 >
