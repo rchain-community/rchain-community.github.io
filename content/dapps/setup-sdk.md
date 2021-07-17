@@ -23,7 +23,7 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
 2. Open a terminal and install **pnpm** globally (like yarn, but faster, better workspaces support)
 
 ```javascript
-  npm install -g pnpm
+  $ npm install -g pnpm
 ```
 
 ![sdk-6](./images/sdk-6.png)
@@ -31,7 +31,7 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
 3. After that, type into the vscode terminal:
 
 ```javascript
-  pnpm install
+  $ pnpm install
 ```
 
 7. After all project dependencies are installed, go under packages/smart-contracts/src/rholang. Here are the rholang smart contract files stored. You can write additional rholang code at this place.  
@@ -43,7 +43,7 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
 8. Bundle your .rho files into javascript/typescript files. Type into the console:
 
 ```javascript
-  pnpm build:w
+  $ pnpm build:w
 ```
 
 ![sdk-8](./images/sdk-8.png)
@@ -70,7 +70,7 @@ This will build the @rholang/sdk package with watch-mode. It is also generating 
 1. in the vscode terminal type:
 
 ```javascript
-  pnpm run dev
+ $ pnpm run dev
 ```
 
 2. open the link to the localhost url in the browser.
