@@ -1,8 +1,12 @@
 # Running RNode (Docker)
 
-These are the run commands to start an RNode Observer Node (read-only node). With this you are connecting to existing validator on mainnet.
+This chapter helps you to start a rnode instance. With this you are connecting to existing validator on mainnet, testnet or creating a local network on your pc.
 
-## Docker for Windows 10 and Linux
+## Docker Setup (Beginners)
+
+If you are new and want to start your local rnode (docker) instance on your pc with only a few clicks: Then follow this [tutorial](/dapps/setup-docker/)
+
+## Docker Setup (Experts)
 
 > Please fill in the `<bootstrap ID>`. The current network ID is posted on [RChain public testnet information](https://rchain.atlassian.net/wiki/spaces/CORE/pages/678756429/RChain+public+testnet+information).
 
