@@ -1,10 +1,10 @@
 # Running RNode (Docker)
 
-This chapter helps you to start a rnode instance. With this you are connecting to existing validator on mainnet, testnet or creating a local network on your pc.
+This chapter helps you to start a rnode instance. With this you are connecting to existing validator on mainnet, testnet or creating a local network on your computer.
 
 ## Docker Setup (Beginners)
 
-If you are new and want to start your local rnode (docker) instance on your pc with only a few clicks: Then follow this [tutorial](/dapps/setup-docker/)
+If you are new and want to start your local rnode (docker) instance on your pc with only a few clicks: Then follow this [tutorial](/dapps/setup-docker/).
 
 ## Docker Setup (Experts)
 
