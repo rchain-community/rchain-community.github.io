@@ -70,8 +70,8 @@ Make sure you go two folders deep if you have extracted the folder (rnode-client
 4. Open the http://localhost:1234 link in the browser
 5. Select localhost and type in the following private key
 
-```javascript
-bb6f30056d1981b98e729cef72a82920e6242a4395e500bd24bd6c6e6a65c36c;
+```bash
+bb6f30056d1981b98e729cef72a82920e6242a4395e500bd24bd6c6e6a65c36c
 ```
 
 ![sdk-4](./images/sdk-4.png)
