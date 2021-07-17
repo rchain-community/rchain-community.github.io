@@ -1,6 +1,6 @@
 # Running RNode (non-Docker)
 
-Rnode is the instance, where the smart-contracts are executed. This chapter describes, how to setup the rnode instance on your pc and connect to an existing network.
+Rnode is the instance, where the smart-contracts are executed. This chapter describes, how to install and setup the rnode instance on your pc and connect to an existing network.
 
 ## Install RNode
 
