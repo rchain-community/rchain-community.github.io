@@ -7,10 +7,10 @@
 Alice is a rising celebrity who receives mail from her fans. They used to send mail directly to her.
 
 ```javascript
-new alice, stdout(`rho:io:stdout`) in {
+new result, alice in {
   // Alice reads fan mail
   for (mail <- alice) {
-    stdout!("Alice received a fanmail")
+    result!("Alice received a fanmail")
   }
   |
 
@@ -27,7 +27,7 @@ Write the code for a competitor to steal the mail  <!-- Answer in fanmailEve.rho
 The problem is that the competitors can listen on the same channel Alice can. So what she really needs is for her fans to have a "write-only bundle"
 
 ```javascript
-new alice, bob, eve, stdout(`rho:io:stdout`) in {
+new result, alice, bob, eve in {
   // Alice gets a lot of fan mail, so she
   // creates a new write only bundle and publishes it.
   new aliceFanMail in {
@@ -38,7 +38,7 @@ new alice, bob, eve, stdout(`rho:io:stdout`) in {
 
     // Alice also reads fan mail
     for (mail <= aliceFanMail) {
-      stdout!("Alice received a fanmail")
+      result!("Alice received a fanmail")
     }
   }
   |
@@ -54,7 +54,7 @@ new alice, bob, eve, stdout(`rho:io:stdout`) in {
   // because Alice's fanmail channel is write-only
   for (aliceFanMail <- alice) {
     for (@stolenMail <= aliceFanMail) {
-      stdout!(["Eve stole a message: ", stolenMail])
+      result!(["Eve stole a message: ", stolenMail])
     }
   }
 }
@@ -75,7 +75,7 @@ Complete Alice's code so that she can get Bob the address he needs.
 
 Here's the answer:
 ```javascript
-new alice, bob, eve, stdout(`rho:io:stdout`) in {
+new result, alice, bob, eve in {
 
   // Alice get a lot of fan mail, so she
   // creates a new write only bundle and publishes it.
@@ -89,7 +89,7 @@ new alice, bob, eve, stdout(`rho:io:stdout`) in {
 
     // Alice also reads fan mail
     for (mail <- aliceFanMail) {
-      stdout!("Alice received a fanmail")
+      result!("Alice received a fanmail")
     }
   }
   |
@@ -110,7 +110,7 @@ new alice, bob, eve, stdout(`rho:io:stdout`) in {
     alice!(*return) |
     for (aliceFanMail <- return) {
       for (@stolenMail <= aliceFanMail) {
-        stdout!(["Eve stole a message: ", stolenMail])
+        result!(["Eve stole a message: ", stolenMail])
       }
     }
   }
@@ -132,7 +132,7 @@ I used to play a game called jackpot as a kid. One player would throw the ball a
 Playing jackpot is just the opposite of sending fanmail. Before there were many fans all sending to one celebrity. Now there is one thrower, sending to one of many recipients
 
 ```javascript
-new throw, stdout(`rho:io:stdout`) in {
+new result, throw in {
   // Throw the ball worth five points
   throw!(5)
   |
@@ -144,11 +144,11 @@ new throw, stdout(`rho:io:stdout`) in {
 
   // Bill and Paige both try to catch
   for (points <= throw){
-    stdout!("Bill caught it")
+    result!("Bill caught it")
   }
   |
   for (points <= throw){
-    stdout!("Paige caught it")
+    result!("Paige caught it")
   }
 }
 ```
@@ -161,7 +161,7 @@ Who will catch the ball in the jackpot code?
 
 
 ### Exercise
-Exercise: Use stdoutAck to display how many points each person actually gets when they catch the ball.
+Exercise: Use resultAck to display how many points each person actually gets when they catch the ball.
 <!-- solution in jackpotNicePrinting.rho -->
 
 
@@ -174,19 +174,19 @@ How is this game in rholang different than the real game where one ball is throw
 
 
 ## Side Bar: String Operations
-Most programming languages will allow you to join or "concatenate" two strings together, and rholang is no exception. We can `stdout!("Hello " ++ "world")`, but we can't concatenate a string with an int.
+Most programming languages will allow you to join or "concatenate" two strings together, and rholang is no exception. We can `result!("Hello " ++ "world")`, but we can't concatenate a string with an int.
 
-One solution is to use `stdoutAck` andsend acknowledgements. Another option is to print a list  `stdout!(["Bill caught it. Points earned: ", *points])`. We'll go into more detail about both techniques in future lessons.
+One solution is to use `resultAck` andsend acknowledgements. Another option is to print a list  `result!(["Bill caught it. Points earned: ", *points])`. We'll go into more detail about both techniques in future lessons.
 
 A final option is to use string interpolation. String interpolation allows you to put placeholders into your strings and replace them with actual values using a map.
 
 ```javascript
-new stdout(`rho:io:stdout`) in {
+new result in {
 
   printStuff!({"noun": person, "adverb": sideways}) |
   
   contract printStuff(map) = {
-    stdout!("The ${noun} jumped ${adverb}" %% *map)
+    result!("The ${noun} jumped ${adverb}" %% *map)
   }
 }
 ```
@@ -206,7 +206,7 @@ What code would Eve have to par in to throw an imposter ball worth 100 points?
 We solve this problem by making sure that the public can only read from the throw channel, but not write to it.
 
 ```javascript
-new gameCh, stdout(`rho:io:stdout`) in {
+new result, gameCh in {
   new throw in {
 
     //Give out read-only access
@@ -221,7 +221,7 @@ new gameCh, stdout(`rho:io:stdout`) in {
   // Bill and Paige join the game
   for (throw <- gameCh){
     for (points <= throw){
-      stdout!(["Bill caught it. Points: ", *points])
+      result!(["Bill caught it. Points: ", *points])
     }
   }
   |

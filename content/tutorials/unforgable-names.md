@@ -10,7 +10,7 @@ Getting back to rholang, `order` is initially a free variable, but it gets bound
 
 ```javascript
 for (order <= coffeeShop) {
-  stdout!("Coffee Order Received")
+  result!("Coffee Order Received")
 }
 ```
 
@@ -18,7 +18,7 @@ The same is true when we use `contract`s.
 
 ```javascript
 contract coffeeShop(order) = {
-  stdout!("Coffee Order Received")
+  result!("Coffee Order Received")
 }
 ```
 
@@ -59,11 +59,11 @@ State whether `x` is bound or free in each of the following code snippets.
 `for` and `contract` are perfect for binding variables inside of continuations. It turns out that the `new` operator also binds variables. What does it bind them to? Brand new channels that we can use to send messages on.
 
 ```javascript
-new pizzaShop, stdout(`rho:io:stdout`) in {
+new result, pizzaShop in {
 
   // Same contract as before
   contract pizzaShop(order) = {
-    stdout!("Order Received.")
+    result!("Order Received.")
   }
   |
   // Known customers can order because pizzaShop is bound here.
@@ -81,7 +81,7 @@ What happens when you try to order a pizza from outside of the `new` restriction
 - [x] Error about top-level free variables
 - [ ] The code runs, but no order is received
 
-We learned that all names quote processes. So what process does the `pizzaShop` name quote? Try printing the process to `stdout` to see
+We learned that all names quote processes. So what process does the `pizzaShop` name quote? Try printing the process to `result` to see
 - [ ] It quotes "pizzaShop"
 - [ ] It doesn't quote anything
 - [x] "Some Unforgeable hex code"
@@ -109,7 +109,7 @@ new alice, bob, pizzaShop in {
 
   // Now we take an order and an ack channel
   contract pizzaShop(order, ack) = {
-    // Instead of acknowledging via stdout, we use ack
+    // Instead of acknowledging via result, we use ack
     ack!("Order Received.")
   }
   |
@@ -124,7 +124,7 @@ new alice, bob, pizzaShop in {
 Why don't the acknowledgements in the previous example show up on the screen?
 - [ ] There is a bug in the code
 - [ ] The orders were not received correctly
-- [x] The confirmation was not sent to `stdout`
+- [x] The confirmation was not sent to `result`
 
 
 
@@ -168,7 +168,7 @@ new myAckChannel,
   stdoutAck!("Print some words.", *myAckChannel)
   |
   for (acknowledgement <- myAckChannel) {
-    stdout!("Received an acknowledgement.")
+    result!("Received an acknowledgement.")
   }
 }
 ```
@@ -177,7 +177,7 @@ By the way, did you ever notice the handful of stuff that always starts in a fre
 
 
 ### Exercise
-`stdout!("1") | stdout!("2") | stdout!("3")`
+`result!("1") | result!("2") | result!("3")`
 Notice that this program does not print the numbers in any particular order. The calls happen concurrently. Imagine we really need these lines to print in order. Modify the code to use ack channels and ensure that the numbers get printed in order.
 
 ### Exercise
@@ -188,7 +188,7 @@ new myChan in {
   myChan!("Hi There")
 }
 |
-for (msg <- myChan) {stdout!(*msg)}
+for (msg <- myChan) {result!(*msg)}
 ```
 
 If your prediction for the previous exercise was wrong, modify the program so it actually does what you predicted it would.

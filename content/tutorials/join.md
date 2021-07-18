@@ -12,7 +12,7 @@ Rholang has the join operator for exactly this situation. To perform a join, jus
 
 ```javascript
 for (p1Pushups <- player1; p2Pushups <- player2) {
-  stdout!("The winner is...")
+  result!("The winner is...")
 }
 ```
 
@@ -35,12 +35,12 @@ One may have been tempted to solve the rocket problem by first receiving one lau
 >This is the BAD way to solve the problem.
 
 ```javascript
-new aliceLaunch, bobLaunch, stdout(`rho:io:stdout`) in {
+new result, aliceLaunch, bobLaunch in {
 
   // Listen for Alice's then Bob's launch commands
   for (x <- aliceLaunch){
     for (y <- bobLaunch){
-      stdout!("Launching the rocket")
+      result!("Launching the rocket")
     }
   }
   |
@@ -61,10 +61,10 @@ When using a join, she can still change her mind because the `for` won't consume
 ## Launch Solution
 
 ```javascript
-new aliceLaunch, bobLaunch, stdout(`rho:io:stdout`) in {
+new result, aliceLaunch, bobLaunch in {
   // Listen for both launch commands
   for (x <- aliceLaunch; y <- bobLaunch){
-    stdout!("Launching the rocket")
+    result!("Launching the rocket")
   }
   |
   // When ready, Engineers send their commands
@@ -109,7 +109,7 @@ There is a game where two players will each send a message on separate channels.
 In this case we actually don't want to use join because we care which player went first. Hope I didn't trick you ;)
 
 ```javascript
-new p1, p2, stdout(`rho:io:stdout`) in {
+new result, p1, p2 in {
   // Send messages like in both orders
   p1!("Send any message") |
   p2!("Hope I win") |
@@ -117,7 +117,7 @@ new p1, p2, stdout(`rho:io:stdout`) in {
   // When Player one wins
   for (m2 <- p2){
     for (m1 <- p1){
-      stdout!("Player one wins!")
+      result!("Player one wins!")
     }
   }
   |
@@ -125,7 +125,7 @@ new p1, p2, stdout(`rho:io:stdout`) in {
   // When player two wins
   for (m1 <- p1){
     for (m2 <- p2){
-      stdout!("Player two wins!")
+      result!("Player two wins!")
     }
   }
 }

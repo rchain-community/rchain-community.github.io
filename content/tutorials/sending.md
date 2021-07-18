@@ -6,15 +6,15 @@ There is a long-standing tradition in programming that your first program should
 !["Person waiving hello"](./images/sending-helloWorld.png)
 
 ```javascript
-new stdout(`rho:io:stdout`) in {
-  stdout!("Hello World!")
+new result in {
+  result!("Hello World!")
 }
 ```
 
 ### Exercise
 Make the program print "Rholang rocks!" instead of "Hello World".
 
-## WTH is stdout?
+## WTH is result?
 
 ![Channels are like mailboxes for sending messages](./images/sending-mailbox.png)
 
@@ -22,17 +22,17 @@ The heart of rholang is communicating on channels. Channels are communication li
 
 ![Redo this diagram!](./images/sending-sendSyntax.png)
 
-We created the channel `stdout` on the first line of the program with `new stdout`. You'll create lots of channels as you learn rholang. We also gave our channel a special power by including `(rho:io:stdout)`. More on that later, but for now just know that you need that part in parentheses to make text actually appear on the screen.
+We created the channel `result` on the first line of the program with `new result`. You'll create lots of channels as you learn rholang. More on that later, but for now just know that you need that part in parentheses to make text actually appear on the screen.
 
 
 ## Using other channels
 
 ![Sent messages wait to be received here in "message purgatory"... JK, it's called the "tuplespace"](./images/sending-mailboxes.png)
 
-You can actually send messages on lots of channels, not just `stdout`. But unlike `stdout` they won't display on the screen because we won't add any special powers to them.
+You can actually send messages on lots of channels, not just `result`. The result will be the first name introduces when we `explore` read only. For deploys on rchain we use a special name for resuls anyname(`rho:rchain:deployId) to get the result of a deploy. More on that later.
 
 ```javascript
-new randoChannel in {
+new result, randoChannel in {
   randoChannel!("This won't be on the screen")
 }
 ```
@@ -54,8 +54,8 @@ Storage Contents:
 In rholang we don't tell the computer to do one thing, then another, then a third. Rather we tell it all the things to do, and it does them "concurrently," or all at once.
 
 ```javascript
-new chan1, stdout(`rho:io:stdout`) in {
-  stdout!("I'm on the screen")
+new result, chan1 in {
+  result!("I'm on the screen")
   |
   chan1!("I'm in the tuplespace")
 }
@@ -78,9 +78,9 @@ Print two messages, "Rick" and "Morty", on the screen in one program.
 
 ## Quiz
 
-What will `stdout!("Programming!")` print to the screen?
+What will `result!("Programming!")` print to the screen?
 - [x] Programming!
-- [ ] stdout!
+- [ ] result!
 - [ ] Nothing
 
 
@@ -88,15 +88,15 @@ What channel does `what!("Up")` send a message on?
 - [ ] `Up`
 - [x] `what`
 - [ ] `what`
-- [ ] `stdout`
+- [ ] `result`
 
 
 Which does rholang do first in
 
 ```javascript
-stdout!("Dogs")
+result!("Dogs")
 |
-stdout!("Cats")
+result!("Cats")
 ```
 - [ ] prints "Dogs"
 - [ ] prints "Cats"

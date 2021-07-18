@@ -8,10 +8,9 @@ So far all of our exercises have existed entirely inside the world of rholang. W
 The name registry provides a partial solution to the problem. To register a name follow this example.
 
 ```javascript
-new doubler,
+new result, doubler,
   uriChan,
-  insertArbitrary(`rho:registry:insertArbitrary`),
-  stdout(`rho:io:stdout`) in {
+  insertArbitrary(`rho:registry:insertArbitrary`) in {
 
    // This is a silly contract that we'll register
   contract doubler(@n /\ Int, return) = {
@@ -24,7 +23,7 @@ new doubler,
  
   // Wait for URI response
   for(@uri <- uriChan) {
-    stdout!(uri)
+    result!(uri)
   }
 }
 ```
@@ -33,9 +32,8 @@ new doubler,
 To look a name up to use it later, try this
 
 ```javascript
-new doublerCh,
-  lookup(`rho:registry:lookup`),
-  stdout(`rho:io:stdout`) in {
+new result, doublerCh,
+  lookup(`rho:registry:lookup`) in {
   
   // Ask the registry to lookup the URI and send the contract back on doublerCh
   lookup!(`rho:id:fos1m8yaki3s8g1ytzkr6boucnhab6nafoco8ww63xqj5k8aa1xfza`, *doublerCh) |
@@ -43,8 +41,8 @@ new doublerCh,
   // Wait to receive the answer back from the registry
   for( doubler <- doublerCh) {
     
-    // Double a number and send the answer to stdout
-    doubler!(7, *stdout)
+    // Double a number and send the answer to result
+    doubler!(7, *result)
   }
 }
 ```

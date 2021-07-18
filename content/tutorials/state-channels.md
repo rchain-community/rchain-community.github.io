@@ -11,7 +11,7 @@ By now you're good at sending data to the tuplespace, and receiving data from th
 Another way in which rholang is unique is that it doesn't have traditional variables. Instead, we can just use the tuplespace to store our data. Whenever you want to set something aside for later, just send it on some channel and receive it back later. Channels that are used in this way are called "state channels", and often have `Ch` at the end of their name
 
 ```javascript
-new stdout(`rho:io:stdout`), boxCh in {
+new result, boxCh in {
   // To save data we just put it in the box
   boxCh!(42)
   |
@@ -19,7 +19,7 @@ new stdout(`rho:io:stdout`), boxCh in {
   // Then to get data back out
   for (data <- boxCh) {
     // Do whatever you want with the data here.
-    stdout!(*data)
+    result!(*data)
   }
 }
 ```
@@ -78,7 +78,7 @@ A few lessons back we discussed the patience game, where each player hopes to be
 Take a minute to remind yourself of the problem we had. With a state channel, we can solve this problem properly.
 
 ```javascript
-new P1, P2, stdout(`rho:io:stdout`) in {
+new result, P1, P2 in {
 
   // active gets its own scope so players can't change its value.
   new active in {
@@ -86,13 +86,13 @@ new P1, P2, stdout(`rho:io:stdout`) in {
     |
     for(_ <- active; _ <- P1) {
       for( _ <- P2) {
-        stdout!("P2 Wins")
+        result!("P2 Wins")
       }
     }
     |
     for(_ <- active; _ <- P2) {
       for (_ <- P1) {
-        stdout!("P1 Wins")
+        result!("P1 Wins")
       }
     }
   }
@@ -118,7 +118,7 @@ In this example, we'll create an object that represents a basic click counter. T
 * Methods: increase, reset
 
 ```javascript
-new currentCount, increase, reset, check, stdout(`rho:io:stdout`) in {
+new result, currentCount, increase, reset, check in {
   
   // Starting the counter at 0
   currentCount!(0) |
@@ -152,7 +152,7 @@ new currentCount, increase, reset, check, stdout(`rho:io:stdout`) in {
 
           // And check it's value afterwards
           for(_ <- ack; count <- currentCount) {
-            stdout!(*count)
+            result!(*count)
           }
         } 
       }
@@ -178,7 +178,7 @@ If you've programmed in other languages like java you may be familiar with const
 The counter is a useful construct in rholang, and you'll likely find that you use it in your projects. The problem is that many projects may want to use counters, and having just one is insufficient. So the solution is to make a factory contract that makes counters. When the factory contract is called, it sends back a brand new counter.
 
 ```javascript
-new counterFactory, stdout(`rho:io:stdout`) in {
+new result, counterFactory in {
   contract counterFactory(increase, reset) = {
     new currentCount in {
       // Start the counter at zero

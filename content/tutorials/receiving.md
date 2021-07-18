@@ -22,13 +22,13 @@ BTW, lines that start with `//` are called comments. They're just there for huma
 
 ![Pizza shop can receive messages on its channel.](./images/receiving-pizza.png)
 
-The following code sends a message on a channel for a pizza shop and the pizza shop receives it. The pizza shop acknowledges receiving the message by printing to `stdout`.
+The following code sends a message on a channel for a pizza shop and the pizza shop receives it. The pizza shop acknowledges receiving the message by printing to `result`.
 
-new pizzaShop, stdout(`rho:io:stdout`) in {
+new result, pizzaShop in {
   pizzaShop!("2 medium pies")
   |
   for(order <- pizzaShop){
-    stdout!("Order Received.")
+    result!("Order Received.")
   }
 }
 
@@ -60,9 +60,9 @@ Our pizza shop example illustrates comm events nicely, but it isn't very realist
 Luckily it's possible to deploy code once, and have it run _every_ time it receives a message. This kind of thing is called a "smart contract". Let's look at some code for a coffee shop that is much superior to the pizza shop.
 
 ```javascript
-new coffeeShop, stdout(`rho:io:stdout`) in {
+new result, coffeeShop in {
   contract coffeeShop(order) = {
-    stdout!("Coffee Order Received")
+    result!("Coffee Order Received")
   }
   |
   coffeeShop!("one hot chocolate")
@@ -104,9 +104,9 @@ Notice this is different from a normal `for` because it has a double arrow `<=` 
 The pizza shop could use a contract like the one the coffee shop had. Let's write it one but use a persistent for instead of a contract. Try to write the entire thing from scratch so you remember the syntax better.
 
 ```javascript
-new pizzaShop, stdout(`rho:io:stdout`) in {
+new result, pizzaShop in {
   for (order <= pizzaShop) {
-    stdout!("Pizza Order Received")
+    result!("Pizza Order Received")
   }
   |
   pizzaShop!("one hot chocolate")
