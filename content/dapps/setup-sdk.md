@@ -26,6 +26,10 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
   $ npm install -g pnpm
 ```
 
+> ⚠️ If you get the following errors in your console:  
+> **Error**: cannot be loaded because running scripts is disabled on this system.  
+> **Solution**: use in vscode the command prompt instead of powershell.
+
 ![sdk-6](./images/sdk-6.png)
 
 3. After that, type into the vscode terminal:
@@ -52,7 +56,7 @@ This will build the @rholang/sdk package with watch-mode. It is also generating 
 ## Testing rholang code
 
 1. Start up your local rnode (docker) instance. [Setup local rnode (docker)](/dapps/setup-docker/)
-2. Install the vscode extensions: **Jest, Test Explorer UI, Vite**.
+2. Install the following vscode extensions: **Rholang, Jest, Test Explorer UI, Jest Test Explorer, Vite**.
 3. Go to the test file (here index.test.ts in the packages/app/\_\_tests\_\_ folder).  
    The generated rholang files can be imported with import {...} from "@rholang/sdk"
    ![sdk-9](./images/sdk-9.png)
@@ -61,6 +65,10 @@ This will build the @rholang/sdk package with watch-mode. It is also generating 
    You can then click on the test case in the ui (2) or open the test file and click on Run
 
 ![sdk-10](./images/sdk-10.png)
+
+> ⚠️ If you get the following problems:  
+> **Error**: Test Explorer UI extension is not showing any tests and run/debug is not available if you open index.test.ts.  
+> **Solution**: restart vscode. If there is on the right bottom a notification with: "This workspace contains a Typescript version ..." then click on the **Allow** button.
 
 4. Open the vscode terminal and go to jest (vite-demo) output. You can see the result of the exploratory-deploy or deploy of the rholang code from the local rnode instance.
    ![sdk-11](./images/sdk-11.png)

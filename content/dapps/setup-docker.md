@@ -33,7 +33,7 @@ Make sure you go two folders deep if you have extracted the folder (rnode-client
 
 > ⚠️ If you get the following errors in your console:  
 > **Error: bind: An attempt was made to access a socket in a way forbidden by its access permissions.**  
-> Solution: this is due to hyper-v binding the ports. Open cmd and type:
+> **Solution**: this is due to hyper-v binding the ports. Open cmd and type:
 >
 > ```javascript
 > $ netsh interface ipv4 show excludedportrange protocol=tcp
@@ -44,10 +44,10 @@ Make sure you go two folders deep if you have extracted the folder (rnode-client
 > ```
 >
 > **Error: Windows push notification framework is missing**  
-> Solution: enable windows push noftification (WpnService) or disable this in WPD (windows privacy dashboard)
+> **Solution**: enable windows push noftification (WpnService) or disable this in WPD (windows privacy dashboard)
 >
 > **Error: binding error**  
-> Solution: if you have installed the rholang extension for vscode, disable under extension settings: Run Rnode with Docker.
+> **Solution**: if you have installed the rholang extension for vscode, disable under extension settings: Run Rnode with Docker.
 
 ## Deploy to the local rnode instance
 
