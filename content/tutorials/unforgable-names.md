@@ -156,9 +156,9 @@ Bob also wants to order a pizza and give a unforgeable ack channel. Where should
 - [ ] On the same line Alice did
 - [ ] On the very first line of the program
 
-## `stdoutAck` and `stderrAck`
+## `stdout`, `stderr`, `stdoutAck` and `stderrAck`
 
-Now that you understand ack channels, you should know about two other ways to print to the screen. They are channels called `stdoutAck` and `stderrAck`. They work just like their cousins from lesson 1, but they take an ack channel.
+Now that you understand ack channels, you should know about ways to print to the rnode log file. They are channels called `stdout`, `stderr`, `stdoutAck` and `stderrAck`. They work just like their cousins `result` from lesson 1, but they print to the rnode log.
 
 ```javascript
 new myAckChannel,
