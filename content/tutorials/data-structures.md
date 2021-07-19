@@ -41,11 +41,14 @@ Pro tip: It is also possible to slice a byte array. Experiment with that on your
 
 ## Tuples
 
-Tuple can rhyme with either "couple" or "drupal"; both pronunciations are correct. You've seen tuples before when you wrote contracts that take in multiple arguments like `contract c(x, y, z) = { Nil }`. The number of items in a tuple is know as its arity. So the tuple received by contract `c` is arity three.
+Tuple can rhyme with either "couple" or "drupal"; both pronunciations are correct. 
+You've seen tuples before when you wrote contracts that take in multiple arguments like `contract c(x, y, z) = { Nil }`. The number of items in a tuple is know as its arity. So the tuple received by contract `c` is arity three.
 
-Tuples contain several pieces of data **in order**. They are always a fixed arity, and have relatively few methods. Thus they are the least interesting data structure, but at the same time, the most fundamental. Let's look at some of the methods offered by tuples.
+Tuples contain several pieces of data **in order**. They are always a fixed arity, and have relatively few methods. Thus they are the least interesting data structure, but at the same time, the most fundamental. A tuple of arity three would be `(x, y, z)`
 
-```javascript
+<!-- Let's look at some of the methods offered by tuples. -->
+
+<!-- ```javascript
 new print, tCh in {
 
   tCh!!((3, 4, 5))|
@@ -79,7 +82,7 @@ What would `("a", "b", "c").nth(3)` evaluate to?
 
 ### Exercise
 
-Write a program that takes in a 4-tuple and prints elements 0 and 3 to the screen.
+Write a program that takes in a 4-tuple and prints elements 0 and 3 to the screen. -->
 
 ## Lists
 
