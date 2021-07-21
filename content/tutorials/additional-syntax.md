@@ -21,7 +21,7 @@ new c2f, f2c in {
   }
   |
 
-  new result(`rho:io:result`) in {
+  new result in {
     // 0 C should be 32 F
     c2f!(0, *result)
     |
@@ -42,7 +42,7 @@ new greeter in {
     return!("Hello there, " ++ *name)
   }
   |
-  new result(`rho:io:result`) in {
+  new result in {
     greeter!("Joshy", *result)|
     greeter!("Tom", *result)
   }

@@ -98,7 +98,7 @@ new greeter in {
     return!("Hello there, world")
   }
   |
-  new result(`rho:io:result`) in {
+  new result in {
     greeter!("Joshy", *result)|
     greeter!("Tom", *result)
   }
