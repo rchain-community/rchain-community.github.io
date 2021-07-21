@@ -21,12 +21,12 @@ new c2f, f2c in {
   }
   |
 
-  new stdout(`rho:io:stdout`) in {
+  new result in {
     // 0 C should be 32 F
-    c2f!(0, *stdout)
+    c2f!(0, *result)
     |
     // 100 C should be 212 F
-    c2f!(100, *stdout)
+    c2f!(100, *result)
   }
 }
 ```
@@ -42,14 +42,14 @@ new greeter in {
     return!("Hello there, " ++ *name)
   }
   |
-  new stdout(`rho:io:stdout`) in {
-    greeter!("Joshy", *stdout)|
-    greeter!("Tom", *stdout)
+  new result in {
+    greeter!("Joshy", *result)|
+    greeter!("Tom", *result)
   }
 }
 ```
 
-What would the code `stdout!("I" ++ "<3" ++ "rholang")` output?
+What would the code `result!("I" ++ "<3" ++ "rholang")` output?
 - [ ] I <3 rholang
 - [ ] ["I", "<3", "rholang"]
 - [x] I<3rholang
@@ -82,7 +82,7 @@ What code could be parred with the previous code to leave the number `24` on `do
 ### Exercise
 Revisit the telephone game from lesson 3 and show that we could have used the `@message` pattern so `message` would be a process.
 
-What should replace the ... in `for(@x <- @y){stdout!(...)}` to make the program valid?
+What should replace the ... in `for(@x <- @y){result!(...)}` to make the program valid?
 - [ ] `@x`
 - [x] `x`
 - [ ] `*x`
@@ -103,12 +103,12 @@ else {
 The situations where you will use `if` are limitless and include guessing a secret word correctly, setting the high score in a video game, determining which poker hand is higher, and calculating the winner of an election. This example contract shows how you might check the status of a bank account.
 
 ```javascript
-new stdout(`rho:io:stdout`) in {
+new result in {
   for (@balance <= @"signTest") {
     if (balance > 0) {
-      stdout!("Account in good standing.")
+      result!("Account in good standing.")
     } else {
-      stdout!("Account overdrawn.")
+      result!("Account overdrawn.")
     }
   }
 }
@@ -148,17 +148,17 @@ Rholang also has the classic Boolean operators AND, OR, and NOT. The syntax is
 * `a or b` true when either `a` or `b` is true
 * `not a` true when `a` is false
 
-What would `stdout!(true and true)` output?
+What would `result!(true and true)` output?
 - [x] true
 - [ ] false
 - [ ] neither; that's invalid syntax
 
-What would `stdout!(not true)` output?
+What would `result!(not true)` output?
 - [ ] true
 - [x] false
 - [ ] neither; that's invalid syntax
 
-What would `stdout!((not not true) or false)` output?
+What would `result!((not not true) or false)` output?
 - [x] true
 - [ ] false
 - [ ] neither; that's invalid syntax

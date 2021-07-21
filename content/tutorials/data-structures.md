@@ -9,11 +9,11 @@ Let's start with a familiar idea. We've seen strings since the very first progra
 String's length method tells how many characters are in a string. While it's slice method creates a new string with some characters sliced off of each end. Strings also support the `++` operator for concatenation.
 
 ```javascript
-new wordLength, stdout(`rho:io:stdout`) in {
+new result, wordLength in {
   contract wordLength(@word) = {
-    stdout!("How many characters in " ++ word)|
-    stdout!(word.length())|
-    stdout!("Shorter version: " ++ word.slice(0, 5))
+    result!("How many characters in " ++ word)|
+    result!(word.length())|
+    result!("Shorter version: " ++ word.slice(0, 5))
   }
   |
   wordLength!("Cantaloupe")
@@ -41,12 +41,15 @@ Pro tip: It is also possible to slice a byte array. Experiment with that on your
 
 ## Tuples
 
-Tuple can rhyme with either "couple" or "drupal"; both pronunciations are correct. You've seen tuples before when you wrote contracts that take in multiple arguments like `contract c(x, y, z) = { Nil }`. The number of items in a tuple is know as its arity. So the tuple received by contract `c` is arity three.
+Tuple can rhyme with either "couple" or "drupal"; both pronunciations are correct. 
+You've seen tuples before when you wrote contracts that take in multiple arguments like `contract c(x, y, z) = { Nil }`. The number of items in a tuple is know as its arity. So the tuple received by contract `c` is arity three.
 
-Tuples contain several pieces of data **in order**. They are always a fixed arity, and have relatively few methods. Thus they are the least interesting data structure, but at the same time, the most fundamental. Let's look at some of the methods offered by tuples.
+Tuples contain several pieces of data **in order**. They are always a fixed arity, and have relatively few methods. Thus they are the least interesting data structure, but at the same time, the most fundamental. A tuple of arity three would be `(x, y, z)`
 
-```javascript
-new tCh, print(`rho:io:stdout`) in {
+<!-- Let's look at some of the methods offered by tuples. -->
+
+<!-- ```javascript
+new print, tCh in {
 
   tCh!!((3, 4, 5))|
 
@@ -79,39 +82,39 @@ What would `("a", "b", "c").nth(3)` evaluate to?
 
 ### Exercise
 
-Write a program that takes in a 4-tuple and prints elements 0 and 3 to the screen.
+Write a program that takes in a 4-tuple and prints elements 0 and 3 to the screen. -->
 
 ## Lists
 
 Lists are a lot like tuples, but they are made with square brackets instead of parentheses. They also have more methods, and can be concatenated or glued together using the `++` operator just like strings can. Here are examples of all of list's methods.
 
 ```javascript
-new lCh, stdout(`rho:io:stdout`) in {
+new result, lCh in {
 
   // Make a new list, l
   lCh!!([3, 4, 5])|
 
   // Test nth
   for (@l <- lCh){
-    stdout!("Test nth. Expected: 5. Got: ${ans}" %% {"ans": l.nth(2)})
+    result!("Test nth. Expected: 5. Got: ${ans}" %% {"ans": l.nth(2)})
   }
   |
 
   // Test toByteArray
   for (@l <- lCh){
-    stdout!(["Test toByteArray. Got: ", l.toByteArray()])
+    result!(["Test toByteArray. Got: ", l.toByteArray()])
   }
   |
 
   // Test slice
   for (@l <- lCh){
-    stdout!(["Test slice. Expected: [4, 5]. Got: ", l.slice(1, 3)])
+    result!(["Test slice. Expected: [4, 5]. Got: ", l.slice(1, 3)])
   }
   |
 
   // Test length
   for (@l <- lCh){
-    stdout!("Test length. Expected: 3. Got: '${ans}" %% {"ans": l.length()})
+    result!("Test length. Expected: 3. Got: '${ans}" %% {"ans": l.length()})
   }
 }
 ```
@@ -137,50 +140,50 @@ new logRun, runsCh in {
 Sets are similar to lists in some ways, but the one big difference is that sets **are not ordered**. A set is a collection of processes, but there is no first or last item in the set. There are also **no duplicates** allowed in sets. Let's take a look at some of set's methods.
 
 ```javascript
-new sCh, stdout(`rho:io:stdout`) in {
+new result, sCh in {
 
   sCh!!(Set(3, 4, 5))|
 
   // Test toByteArray
   for (@s <- sCh){
-    stdout!(["Test toByteArray. Got: ", s.toByteArray()])
+    result!(["Test toByteArray. Got: ", s.toByteArray()])
   }
   |
 
   // Test Add
   for (@s <- sCh){
-    stdout!(["Test add. Expected Set(3, 4, 5, 6), Got: ", s.add(6)])
+    result!(["Test add. Expected Set(3, 4, 5, 6), Got: ", s.add(6)])
   }
   |
 
   // Test Diff
   for (@s <- sCh){
-    stdout!(["Test diff. Expected: Set(5) Got: ", s.diff(Set(3, 4))])
+    result!(["Test diff. Expected: Set(5) Got: ", s.diff(Set(3, 4))])
   }
   |
 
   // Test Union
   for (@s <- sCh){
-    stdout!(["Test union. Expected: Set(1, 2, 3, 4, 5). Got: ", s.union(Set(1, 2))])
+    result!(["Test union. Expected: Set(1, 2, 3, 4, 5). Got: ", s.union(Set(1, 2))])
   }
   |
 
   // Test Delete
   for (@s <- sCh){
-    stdout!(["Test delete. Expected: Set(3, 4). Got: ", s.delete(5)])
+    result!(["Test delete. Expected: Set(3, 4). Got: ", s.delete(5)])
   }
   |
 
   // Test Contains
   for (@s <- sCh){
-    stdout!(["Test contains. Expected: true. Got:", s.contains(5)])|
-    stdout!(["Test contains. Expected: false. Got: ", s.contains(6)])
+    result!(["Test contains. Expected: true. Got:", s.contains(5)])|
+    result!(["Test contains. Expected: false. Got: ", s.contains(6)])
   }
   |
 
   // Test Size
   for (@s <- sCh){
-    stdout!("Test size. Expected 3. Got: ${ans}" %% {"ans": s.size()})
+    result!("Test size. Expected 3. Got: ${ans}" %% {"ans": s.size()})
   }
 }
 ```
@@ -204,7 +207,7 @@ What is the result of `Set(1,2,3) == Set(3,2,1)`
 Maps are a lot like sets but they contain **key value pairs**. Maps are also unordered, but when you add an item (which is now known as a key) you also add an associated value. Here are examples of all of map's methods.
 
 ```javascript
-new mCh, print(`rho:io:stdout`) in {
+new print, mCh in {
 
   mCh!!({"a": 3, "b": 4, "c": 5})|
 
@@ -281,7 +284,7 @@ What is the result of `{"years": 1, "weeks": 52, "days": 365}.get(52)`
 To demonstrate the usefulness of maps in rholang, let's consider this contract that looks up the capital of any country (that I bothered to type).
 
 ```javascript
-new capitalOf, print(`rho:io:stdout`) in {
+new print, capitalOf in {
   new mapCh in {
 
     // Use a persistent send instead of peeking later
@@ -448,13 +451,13 @@ We've learned about several interesting data structures in this lesson. Data str
 In this example, Alice and Bob each have one unforgeable name (that I've called key). The keys may be useful on their own (for things not shown in the snippet), but only when used together, can the contract shown be called. This is known as "rights amplification".
 
 ```javascript
-new alice, bob, key1, key2, stdout(`rho:io:stdout`) in {
+new alice, result, bob, key1, key2 in {
 
   alice!(*key1)|
   bob!(*key2)|
 
   contract @(*key1, *key2)(_) = {
-    stdout!("Congratulations, Alice and Bob, you've cooperated.")
+    result!("Congratulations, Alice and Bob, you've cooperated.")
   }
 }
 ```

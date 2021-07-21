@@ -10,7 +10,7 @@ In this lesson we'll build up a few example projects that uses state channels, a
 Let's revisit the air traffic control example from lesson 4. Previously controllers were able to broadcast weather and runway information by using a repeated send. But they were not able to update the information. And we all know weather can change unpredictably. So in this example we'll store the current information on a state channel, and give the controllers a capability to update it as necessary.
 
 ```javascript
-new stationFactory, stdout(`rho:io:stdout`) in {
+new result, stationFactory in {
   contract stationFactory(initialMessage, getInfo, setInfo) = {
     new currentMessage in {
       // Populate the initial message
@@ -44,7 +44,7 @@ new stationFactory, stdout(`rho:io:stdout`) in {
   }
   |
   // Listener tunes in to receive latest message
-  airportInfo!(*stdout)
+  airportInfo!(*result)
 }
 ```
 

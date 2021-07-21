@@ -8,15 +8,15 @@ Similarly, we can match sentence patterns. The sentences "I like cheese" and "I 
 The most obvious place that rholang uses pattern matching is in its `match` construct which works as shown here.
 
 ```javascript
-new patternMatcher, stdout(`rho:io:stdout`) in {
+new result, patternMatcher in {
 
   for (x <= patternMatcher) {
    match *x {
-    Nil       => stdout!("Got the stopped process")
-    "hello"   => stdout!("Got the string hello")
-    [x, y]    => stdout!("Got a two-element list")
-    Int       => stdout!("Got an integer")
-    _         => stdout!("Got something else")
+    Nil       => result!("Got the stopped process")
+    "hello"   => result!("Got the string hello")
+    [x, y]    => result!("Got a two-element list")
+    Int       => result!("Got an integer")
+    _         => result!("Got something else")
    }
   }
   |
@@ -98,9 +98,9 @@ new greeter in {
     return!("Hello there, world")
   }
   |
-  new stdout(`rho:io:stdout`) in {
-    greeter!("Joshy", *stdout)|
-    greeter!("Tom", *stdout)
+  new result in {
+    greeter!("Joshy", *result)|
+    greeter!("Tom", *result)
   }
 }
 ```
@@ -114,14 +114,14 @@ Write a series of contracts that calculate the area of a rectangle. In the most 
 You can do cool things with pattern matching like `for(@{x!(P)} <- y){ Q }` which will only reduce if the process sent on channel `x` matches the pattern of a single send. Then in the process Q you will have bound the variables `x`, the channel, and `P`, the process being sent
 
 ```javascript
-new patternMatcher, stdout(`rho:io:stdout`) in {
+new result, patternMatcher in {
 
   for (x <= patternMatcher) {
    match *x {
-    Nil               => stdout!("Got the stopped process")
-    {_!(_)}           => stdout!("Got a send")
-    {for(@0 <- _){_}} => stdout!("Got a receive on @0")
-    _                 => stdout!("Got something else")
+    Nil               => result!("Got the stopped process")
+    {_!(_)}           => result!("Got a send")
+    {for(@0 <- _){_}} => result!("Got a receive on @0")
+    _                 => result!("Got something else")
    }
   }
   |
@@ -150,7 +150,7 @@ There may be times when you want to match either of two patterns, or you want to
 To match any one of several patterns you use the "union" operator, `\/`
 
 ```javascript
-new log(`rho:io:stdout`), binderChecker in {
+new log, binderChecker in {
   contract binderChecker(@data, return) = {
     match data {
       "nombre" \/ "name" => return!("name-like")
@@ -167,7 +167,7 @@ new log(`rho:io:stdout`), binderChecker in {
 To match both of two patterns you use the "intersection" operator, `/\`. In this example we are verifying that registration data is valid. A registrant must supply their name and age, and may supply any amount of additional data. By the way, this technique for storing key-value data is often known as "RHOCore".
 
 ```javascript
-new print(`rho:io:stdout`), register in {
+new print, register in {
 
   for (@{{@"name"!(_) | _} /\ {@"age"!(_) | _}} <= register){
     print!("Both name and age were in the data")
@@ -184,7 +184,7 @@ new print(`rho:io:stdout`), register in {
 }
 ```
 
-Notice I called my stdout channel `print` that time. You can call those names anything you'd like. Although it's generally good to be consistent so as not to confuse anyone. From here on I'll stick with `stdout`.
+Notice I called my result channel `print` that time. You can call those names anything you'd like. Although it's generally good to be consistent so as not to confuse anyone. From here on I'll stick with `result`.
 
 ### Exercise
 The union example here is pretty basic. Expand it so it can match more languages and more words. Also write tests that show what happens when only the default pattern is matched.
@@ -197,7 +197,7 @@ Several lessons ago we discussed how bundles can be used to make read- or write-
 In this example code an army has a missile and they maintain control of launching the missile by building the capability on an unforgeable name. Because of diplomatic relationships, the army will allow the public to inspect the missile for safety, but certainly not launch it.
 
 ```javascript
-new log(`rho:io:stdout`), missile in {
+new log, missile in {
   contract @(*missile, "launch")(_) = {
     log!("launching...")
   }
@@ -229,7 +229,7 @@ new getInspectionChannel, ack in {
 In order to solve the problem the army simply gives out a bundled version of the compound name so that it cannot be taken apart by pattern matching.
 
 ```javascript
-new getInspectionChannel, log(`rho:io:stdout`), missile in {
+new log, getInspectionChannel, missile in {
   contract @(*missile, "launch")(_) = {
     log!("launching...")
   }

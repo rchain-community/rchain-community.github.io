@@ -15,13 +15,13 @@ An air traffic control tower may be interested in doing just the opposite -- sen
 The control tower just needs a minor adjustment in their code to make the send persistent. Rather than sending with a single `!`, they will use a double `!!`.
 
 ```javascript
-new airportInfo, stdout(`rho:io:stdout`) in {
+new result, airportInfo in {
   // ATC sends the info
   airportInfo!!("No wind; Runway 11")
   |
   // Pilot receives the info
   for (info <- airportInfo) {
-    stdout!(*info)
+    result!(*info)
   }
 }
 ```
@@ -31,7 +31,7 @@ Confirm for yourself that the original send is still in the tuplespace.
 ### Exercise
 Modify the above code so that a second pilot also receives the information. Still, the send persists.
 
-By the way, did you notice that we don't need `new stdout(...) in {}` when we don't actually print anything to the screen `stdout`?
+By the way, did you notice that we don't need `new result in {}` when we don't actually print anything to the screen `result`?
 
 How many comm events happen in `for (x <- y) {Nil} | y!!(Nil)`
 - [x] `1`
@@ -46,14 +46,14 @@ Persistent sends and receives are very useful as we just showed. But often norma
 A better solution is to use a normal send and require each pilot who receives the message to put it back on the channel when they are done.
 
 ```javascript
-new airportInfo, stdout(`rho:io:stdout`) in {
+new result, airportInfo in {
   // ATC sends the info
   airportInfo!("No wind; Runway 11")
   |
 
   // Pilot receives the info
   for (info <- airportInfo) {
-    stdout!(*info)
+    result!(*info)
     // TODO Pilot MUST put the info back
   }
   |
@@ -86,14 +86,14 @@ One problem with the code above is that a forgetful pilot may not actually put t
 To "peek" at what's on a channel without consuming it, use the `<<-` operator.
 
 ```javascript
-new airportInfo, stdout(`rho:io:stdout`) in {
+new result, airportInfo in {
   // ATC sends the info
   airportInfo!("No wind; Runway 11")
   |
 
   // Pilot receives the info
   for (info <<- airportInfo) {
-    stdout!(*info)
+    result!(*info)
   }
   |
 
