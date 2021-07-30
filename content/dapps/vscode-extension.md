@@ -18,12 +18,12 @@ Windows 10
 4. Install the VSCode extension for rholang. Search for the rholang extension, install it and then got to setting for this extension.
    ![dev3](./images/vscode-3.png)
 
-5. The checkbox for Enable Docker and the Rnode Docker Image (rchain/rnode:v0.9.24) have to be set.
+5. The checkbox for Enable Docker and the Rnode Docker Image (rchain/rnode:v0.12.1) has to be set.
    ![dev2](./images/vscode-4.png)
+6. Open to the command line in vscode and to the OUTPUT tab. Then select rholang on the dropdown menu on the right. Wait for a minute until there is the output **Rholang VM is ready!**.
+   ![dev2](./images/vscode-7.png)
 
-   > ⚠️ you have to use the rnode v0.9.24 version for docker. Newer version are at the time of writing currently not supported.
-
-6. Create a new file with the .rho extension. And write some rholang code:
+7. Create a new file with the .rho extension. And write some rholang code:
 
    ```javascript{numberLines: true}
    new helloworld, stdout(`rho:io:stdout`) in {
@@ -43,13 +43,13 @@ Windows 10
 
    ![dev3](./images/vscode-5.png)
 
-7. Save the hello.rho file with strg+s. After every save the rholang file is evaluated on the rnode instance in docker.
+8. Save the hello.rho file with strg+s. After every save the rholang file is evaluated on the rnode instance in docker.
 
-8. Open a terminal in VSCode, go to OUTPUT and select Rholang in the navbar. The evaluated result of the code in this example is: "Hello World again"
+9. Open a terminal in VSCode, go to OUTPUT and select Rholang in the navbar. The evaluated result of the code in this example is: "Hello World again"
    "Hello World".
 
    ![dev4](./images/vscode-6.png)
 
    > ⚠️ If you get the following errors in your console:  
-   > *docker: Error response from daemon: open \\.\pipe\docker_engine_linux* or   
-   *docker: Error response from daemon: status code not OK but 500:* then wait and restart vscode again.
+   > _docker: Error response from daemon: open \\.\pipe\docker_engine_linux_ or  
+   > _docker: Error response from daemon: status code not OK but 500:_ then wait and restart vscode again.
