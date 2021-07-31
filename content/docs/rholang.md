@@ -19,7 +19,7 @@ This is the Visual Studio Code extension for the Rholang programming language. I
 
 ## Rchain Cloud
 
-Evaluate Rholang code in the cloud and test your dapp [Rchain Cloud](https://try-rholang-22.netlify.app/).
+Evaluate Rholang code in the cloud and test your dapp [Rchain Cloud](https://rchain-community.github.io/rgov/).
 
 ## Local Node
 

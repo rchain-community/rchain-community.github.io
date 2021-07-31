@@ -17,7 +17,7 @@
           </li>
           <br />
           <li>
-            <a href="https://rgov.rhobot.net/">RChain Cloud</a>
+            <a href="https://rchain-community.github.io/rgov/">RChain Cloud</a>
           </li>
 
           <br />
@@ -70,12 +70,12 @@
 </template>
 
 <script>
-import GraphQlLogo from '~/assets/images/graphql-logo.svg';
-import VueLogo from '~/assets/images/vue-logo.svg';
-import WebpackLogo from '~/assets/images/webpack-logo.svg';
-import RholangLogo from '~/assets/images/rholang-small-white.svg';
-import Bullet from '~/assets/images/bullet.svg';
-import Dots from '~/components/Dots.vue';
+import GraphQlLogo from "~/assets/images/graphql-logo.svg";
+import VueLogo from "~/assets/images/vue-logo.svg";
+import WebpackLogo from "~/assets/images/webpack-logo.svg";
+import RholangLogo from "~/assets/images/rholang-small-white.svg";
+import Bullet from "~/assets/images/bullet.svg";
+import Dots from "~/components/Dots.vue";
 
 export default {
   components: {
