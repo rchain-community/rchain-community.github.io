@@ -14,7 +14,9 @@ This chapter describes how you can use the rholang-sdk as a template for your we
 The SDK works with Windows, Linux, Mac. This tutorial describes the setup process for windows.
 
 **Prerequisites:**
-Windows 10, Linux, Mac
+
+- Windows 10, Linux, Mac
+- Node.js 16
 
 **Optional, but recommended:**  
 Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
@@ -26,7 +28,7 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
   $ npm install -g pnpm
 ```
 
-> ⚠️ If you get the following errors in your console:  
+> ⚠️ If you get the following error in your console:  
 > **Error**: cannot be loaded because running scripts is disabled on this system.  
 > **Solution**: use in vscode the command prompt instead of powershell.
 
@@ -49,6 +51,10 @@ Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
 ```javascript
   $ pnpm build:w
 ```
+
+> ⚠️ If you get the following error in your console:  
+> **Error**: replaceall is not a function  
+> **Solution**: update your nodejs to version 16
 
 ![sdk-8](./images/sdk-8.png)
 This will build the @rholang/sdk package with watch-mode. It is also generating type informations for importing this into your frontend app. If you change your .rho file and save it, then it will automatically generate a new js/ts output in the dist folder.
