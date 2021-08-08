@@ -14,21 +14,33 @@ Windows 10, Linux, Mac
    If the docker logo ist red, then there is a docker problem with your pc (sometimes wsl_update_x64.msi has to be additionally installed).
    ![vscode1](./images/vscode-1.png)
 
-3. Download the rnode-client-js-dev-test from [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test) ➜ click on the button **Code** on github ➜ Download ZIP ➜ extract the zip folder locally
-4. open a command line window and type in:
+3. Download the [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test) ➜ For that go into vscode and there click on View ➜ Command Palette
+   ![vscode1](./images/vscode-8.png)
+4. Then type in: git clone.  
+   ![vscode1](./images/vscode-9.png)
 
-```javascript
-   $ cd <rnode-client-js-dev-test-master folder>
-```
+   If there is not git clone to select, you have to install [Git SCM](https://git-scm.com/downloads) on your pc .
+   Click on git clone and type in:
+
+   ```javascript
+   https://github.com/tgrospic/rnode-client-js-dev-test.git
+   ```
+
+   ![vscode1](./images/vscode-10.png)  
+   Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
+
+5. Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
+   ![vscode1](./images/vscode-11.png)
+
+   Type into the command promt:
 
 ```javascript
    $ docker-compose up -d
 ```
 
-Make sure you go two folders deep if you have extracted the folder (rnode-client-js-dev-test-master/rnode-client-js-dev-test-master)
-![sdk-1](./images/sdk-1.png)
+> ⚠️ If you get errors in your console, then check that docker is not in an error state.
 
-5. Open the docker setting if you want to see the logs of rnode (small icon on the taskbar)
+6. Open the docker setting if you want to see the logs of rnode (small icon on the taskbar)
    ![sdk-2](./images/sdk-2.png)
 
 > ⚠️ If you get the following errors in your console:  
@@ -64,6 +76,8 @@ Make sure you go two folders deep if you have extracted the folder (rnode-client
 ```javascript
    $ npm run start
 ```
+
+> ⚠️ If you get the errors in your console, then you have to go to **File ➜ Open Folder** and go one folder deeper.
 
 ![sdk-3](./images/sdk-3.png)
 
