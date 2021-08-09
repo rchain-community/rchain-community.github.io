@@ -67,7 +67,8 @@ Windows 10, Linux, Mac
 4. Then type in: git clone.  
    ![vscode1](./images/vscode-9.png)
 
-   If there is not git clone to select, you have to install [Git SCM](https://git-scm.com/downloads) on your pc .
+   If there is not git clone to select, you have to install [Git SCM](https://git-scm.com/downloads) on your pc.  
+   ⚠️ After that you have to restart VSCode.  
    Click on git clone and type in:
 
    ```bash
