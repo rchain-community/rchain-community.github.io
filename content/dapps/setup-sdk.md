@@ -15,6 +15,7 @@ The SDK works with Windows, Linux, Mac. This tutorial describes the setup proces
 
 **Prerequisites:**  
 Windows 10, Linux, Mac  
+[VSCode](https://code.visualstudio.com/)  
 [Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
 
 **Optional, but recommended:**  

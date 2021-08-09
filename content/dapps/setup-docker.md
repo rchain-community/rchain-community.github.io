@@ -9,6 +9,7 @@ The rnode docker instance is running on Windows, Linux, Mac.
 
 **Prerequisites:**  
 Windows 10, Linux, Mac  
+[VSCode](https://code.visualstudio.com/)  
 [Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
 
 ### Ubuntu
