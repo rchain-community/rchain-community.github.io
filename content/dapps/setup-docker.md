@@ -4,10 +4,57 @@ This document describes how to setup a docker rnode instance on your local compu
 
 ## Installing rnode (docker)
 
-The rnode docker instance is running on Windows, Linux, Mac. This tutorial describes the installing process for windows, but other operating systems are similar to setup.
+Docker lets you run your rnode instance independent of your operating system.
+The rnode docker instance is running on Windows, Linux, Mac.
 
-**Prerequisites:**
-Windows 10, Linux, Mac
+**Prerequisites:**  
+Windows 10, Linux, Mac  
+[Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
+
+### Ubuntu
+
+1. Type in the following commands in the ubuntu terminal for installing node 16:
+
+   ```bash
+   $ sudo apt update
+   $ sudo apt upgrade
+   $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+   $ sudo apt install -y nodejs
+   $ node -v
+   ```
+
+   The node version has to be 16 or higher.
+
+2. Download the [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test) ➜ For that go into vscode and there click on View ➜ Command Palette
+   ![vscode1](./images/vscode-8.png)
+3. Then type in: git clone.  
+    ![vscode1](./images/vscode-9.png)
+
+   If there is not git clone to select, you have to install it:
+
+   ```bash
+   $ sudo apt-get install git
+   ```
+
+   After installing git, click on git clone and type in:
+
+   ```bash
+   https://github.com/tgrospic/rnode-client-js-dev-test.git
+   ```
+
+   ![vscode1](./images/vscode-10.png)  
+   Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
+
+4. Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
+   ![vscode1](./images/vscode-11.png)
+
+   Type into the command promt:
+
+   ```bash
+      $ docker-compose up -d
+   ```
+
+### Windows 10
 
 1. Install the latest updates for windows 10 and install the latest version of [docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/). Click on **Get Docker** and install it on your pc. Restart the pc.
 2. There has to be a **white** docker logo on the windows taskbar.
@@ -22,7 +69,7 @@ Windows 10, Linux, Mac
    If there is not git clone to select, you have to install [Git SCM](https://git-scm.com/downloads) on your pc .
    Click on git clone and type in:
 
-   ```javascript
+   ```bash
    https://github.com/tgrospic/rnode-client-js-dev-test.git
    ```
 
@@ -34,7 +81,7 @@ Windows 10, Linux, Mac
 
    Type into the command promt:
 
-```javascript
+```bash
    $ docker-compose up -d
 ```
 

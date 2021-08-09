@@ -13,10 +13,9 @@ This chapter describes how you can use the rholang-sdk as a template for your we
 
 The SDK works with Windows, Linux, Mac. This tutorial describes the setup process for windows.
 
-**Prerequisites:**
-
-- Windows 10, Linux, Mac
-- [Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
+**Prerequisites:**  
+Windows 10, Linux, Mac  
+[Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
 
 **Optional, but recommended:**  
 Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
