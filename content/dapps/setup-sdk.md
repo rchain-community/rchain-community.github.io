@@ -57,7 +57,7 @@ Windows 10, Linux, Mac
 5. Type into the command promt:
 
    ```bash
-      $ docker-compose up -d
+   $ docker-compose up -d
    ```
 
 ### Windows 10
