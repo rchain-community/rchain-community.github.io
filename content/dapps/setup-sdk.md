@@ -1,140 +1,152 @@
-# Rholang SDK usage
+# Setup local rnode instance
 
-This chapter describes how you can use the rholang-sdk as a template for your web dApp. It includes:
+This document describes how to setup a docker rnode instance on your local computer. This is for testing purposes, so you can test your code in a local test environement. Your code will behave, like it will on the real network.
 
-- Rholang bundler (rholang to js/ts bundler)
-- A testing framework based on jest for evaluating your deploys.
-- All need libraries for interacting with the rchain network (locally/testnet/mainnet) are included.
-- A frontend app, which is a nft template web application written in typescript and executed on vercel.com (static site).
-- Interaction with the metamask plugin and the nft template web app.
-- Cloudflare workers for caching rholang exploratory deploys from the rchain network.
+## Installing rnode (docker)
 
-## Installing the SDK
-
-The SDK works with Windows, Linux, Mac. This tutorial describes the setup process for windows.
+Docker lets you run your rnode instance independent of your operating system.
+The rnode docker instance is running on Windows, Linux, Mac.
 
 **Prerequisites:**  
 Windows 10, Linux, Mac  
 [VSCode](https://code.visualstudio.com/)  
 [Node.js 16](https://nodejs.org/dist/v16.6.1/node-v16.6.1-x64.msi)
 
-**Optional, but recommended:**  
-Local rnode (docker) instance. Look [here](/dapps/setup-docker/), how to do it.
+### Ubuntu
 
-1. Download the [nft-template](https://github.com/rholang/nft) ➜ For that go into vscode and there click on View ➜ Command Palette
+1. Type in the following commands in the ubuntu terminal for installing node 16:
+
+   ```bash
+   $ sudo apt update
+   $ sudo apt upgrade
+   $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+   $ sudo apt install -y nodejs
+   $ node -v
+   ```
+
+   The node version has to be 16 or higher.
+
+2. Download the [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test) ➜ For that go into vscode and there click on View ➜ Command Palette
    ![vscode1](./images/vscode-8.png)
-2. Then type in: git clone.  
+3. Then type in: git clone.  
+    ![vscode1](./images/vscode-9.png)
+
+   If there is not git clone to select, you have to install it:
+
+   ```bash
+   $ sudo apt-get install git
+   ```
+
+   After installing git, click on git clone and type in:
+
+   ```bash
+   https://github.com/tgrospic/rnode-client-js-dev-test.git
+   ```
+
+   ![vscode1](./images/vscode-10.png)  
+   Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
+
+4. Now install docker on your machine: Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
+   ![vscode1](./images/vscode-11.png)
+
+   ```bash
+   $ sudo apt install docker.io
+   $ sudo systemctl enable --now docker
+   ```
+
+5. Type into the command promt:
+
+   ```bash
+      $ docker-compose up -d
+   ```
+
+### Windows 10
+
+1. Install the latest updates for windows 10 and install the latest version of [docker](https://hub.docker.com/editions/community/docker-ce-desktop-windows/). Click on **Get Docker** and install it on your pc. Restart the pc.
+2. There has to be a **white** docker logo on the windows taskbar.
+   If the docker logo ist red, then there is a docker problem with your pc (sometimes wsl_update_x64.msi has to be additionally installed).
+   ![vscode1](./images/vscode-1.png)
+
+3. Download the [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test) ➜ For that go into vscode and there click on View ➜ Command Palette
+   ![vscode1](./images/vscode-8.png)
+4. Then type in: git clone.  
    ![vscode1](./images/vscode-9.png)
 
    If there is not git clone to select, you have to install [Git SCM](https://git-scm.com/downloads) on your pc.  
-   ⚠️ After that you have to restart VSCode.
+   ⚠️ After that you have to restart VSCode.  
    Click on git clone and type in:
 
-   ```javascript
-   https://github.com/rholang/nft.git
+   ```bash
+   https://github.com/tgrospic/rnode-client-js-dev-test.git
    ```
 
-   ![vscode1](./images/sdk-12.png)  
+   ![vscode1](./images/vscode-10.png)  
    Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
 
-3. Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
+5) Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
    ![vscode1](./images/vscode-11.png)
 
-4. Install **pnpm** globally (like yarn, but faster, better workspaces support). For that type the following into the command prompt:
+   Type into the command promt:
 
-```javascript
-  $ npm install -g pnpm
+```bash
+   $ docker-compose up -d
 ```
 
-> ⚠️ If you get the following error in your console:  
-> **Error**: cannot be loaded because running scripts is disabled on this system.  
-> **Solution**: use in vscode the command prompt instead of powershell.
+> ⚠️ If you get errors in your console, then check that docker is not in an error state.
 
-![sdk-6](./images/sdk-6.png)
+6. Open the docker setting if you want to see the logs of rnode (small icon on the taskbar)
+   ![sdk-2](./images/sdk-2.png)
 
-5. After that, type into the vscode terminal:
+> ⚠️ If you get the following errors in your console:  
+> **Error: bind: An attempt was made to access a socket in a way forbidden by its access permissions.**  
+> **Solution**: this is due to hyper-v binding the ports. Open cmd and type:
+>
+> ```javascript
+> $ netsh interface ipv4 show excludedportrange protocol=tcp
+> $ net stop winnat
+> $ netsh int ipv4 add excludedportrange protocol=tcp startport=50400 numberofports=10
+> $ netsh int ipv4 add excludedportrange protocol=tcp startport=60400 numberofports=10
+> $ net start winnat
+> ```
+>
+> **Error: Windows push notification framework is missing**  
+> **Solution**: enable windows push noftification (WpnService) or disable this in WPD (windows privacy dashboard)
+>
+> **Error: binding error**  
+> **Solution**: if you have installed the rholang extension for vscode, disable under extension settings: Run Rnode with Docker.
 
-```javascript
-  $ pnpm install
-```
+## Deploy to the local rnode instance
 
-6. After all project dependencies are installed, go under packages/smart-contracts/src/rholang. Here are the rholang smart contract files stored. You can write additional rholang code at this place.  
-   If you want to insert a **external javascript variable**, then type "rho:arg:&lt;variable name&gt;". E.g "rho:arg:account" .
-   This contract can then later be called from javascript with checkBalance({account:"0x1223232"}).
+1. Open vscode and open the downloaded folder: [rnode-client-js-dev-test](https://github.com/tgrospic/rnode-client-js-dev-test)
 
-![sdk-7](./images/sdk-7.png)
-
-7. Bundle your .rho files into javascript/typescript files. Type into the console:
-
-```javascript
-  $ pnpm build:w
-```
-
-> ⚠️ If you get the following error in your console:  
-> **Error**: replaceall is not a function  
-> **Solution**: update your nodejs to version 16
-
-![sdk-8](./images/sdk-8.png)
-This will build the @rholang/sdk package with watch-mode. It is also generating type informations for importing this into your frontend app. If you change your .rho file and save it, then it will automatically generate a new js/ts output in the dist folder.
-
-## Testing rholang code
-
-1. Start up your local rnode (docker) instance. [Setup local rnode (docker)](/dapps/setup-docker/)
-2. Install the following vscode extensions: **Rholang, Jest, Test Explorer UI, Jest Test Explorer, Vite**.
-3. Go to the test file (here index.test.ts in the packages/app/\_\_tests\_\_ folder).  
-   The generated rholang files can be imported with import {...} from "@rholang/sdk"
-   ![sdk-9](./images/sdk-9.png)
-
-4. If you have the vscode extensions installed, you can see on the left sidebar a test logo (1). Click on it.  
-   You can then click on the test case in the ui (2) or open the test file and click on Run
-
-![sdk-10](./images/sdk-10.png)
-
-> ⚠️ If you get the following problems:  
-> **Error**: Test Explorer UI extension is not showing any tests and run/debug is not available if you open index.test.ts.  
-> **Solution**: restart vscode. If there is on the right bottom a notification with: "This workspace contains a Typescript version ..." then click on the **Allow** button.
-
-4. Open the vscode terminal and go to jest (vite-demo) output. You can see the result of the exploratory-deploy or deploy of the rholang code from the local rnode instance.
-   ![sdk-11](./images/sdk-11.png)
-
-## Executing the NFT template app
-
-1. in the vscode terminal type:
+2. Open this folder inside vscode and open a terminal:
 
 ```javascript
- $ pnpm run dev
+   $ npm install
 ```
 
-2. open the link to localhost:3000 in the browser.
+3. After installing the packages then type:
 
-## Publish the site to vercel.com
+```javascript
+   $ npm run start
+```
 
-Vercel.com lets you create a free static site, where you get a free subdomain.
+> ⚠️ If you get the errors in your console, then you have to go to **File ➜ Open Folder** and go one folder deeper.
 
-1. Create an account at vercel.com
-2. Clone the [nft-template](https://github.com/rholang/nft) to your own github repository.
-3. Create a new project at vercel.com and import your repository.
-4. Go to settings of your project and change it to the following:
-   ![sdk-14](./images/sdk-14.png)
-   ![sdk-15](./images/sdk-15.png)
-5. If you make a pull request to your repository, then there is an automatic rebuild of the site.
+![sdk-3](./images/sdk-3.png)
 
-## Using Cloudflare workers with rnode and your webApp
+4. Open the http://localhost:1234 link in the browser
+5. Select localhost and type in the following private key
 
-Cloudflare workers lets you deploy serverless code, which can be used for small code execution. Together with cloudlflare workers key-value store one can use it for having a very fast response time, when thousands of user are doing exploratory-deploys on the Rchain network.
+```bash
+bb6f30056d1981b98e729cef72a82920e6242a4395e500bd24bd6c6e6a65c36c
+```
 
-The repository for the cloudflare worker is [here](https://github.com/rholang/cloudflare-nft). But you can just use the existing one by making a request to https://worker-typescript-template.nftland.workers.dev or import the functions Fx.exploreDeployFx from the @rholang/connectors library.
+![sdk-4](./images/sdk-4.png)
 
-**Advantages**:
+6. Name the wallet and save it.
 
-- Free to use
-- Ddos protection
-- 100.000 free request per month, 1GB key-value store are free
-- < 60 ms response time
-- caching of your explore-deploys
+> ⚠️ Never type a private key in an app your don't trust, this is only a private key for testrevs, so no real mainnet tokens.
 
-### Concept
-
-When the first user visits the website, then explore-deploys are send to the cloudflare worker. Every explore-deploy to the cloudlfare worker is stored in their key-value store. If this request was never fetched, then for the first time it will send a request to the rchain network. The response is cached. When a second user is requesting the same explore-deploy rholang code, then cloudlflare is sending the cached response back, which is very fast. When some smart-contract has changed on the rchain network (deploy), then the rnode instance will send to the cloudlflare-worker a notice, that the cache is not up-to-date anymore.
-
-![sdk-13](./images/sdk-13.png)
+7. Click on an example contract (here return data) click on **Deploy Rholang code** and then click on **Propose**. After a very seconds there should be a return value.
+   ![sdk-5](./images/sdk-5.png)
