@@ -19,7 +19,7 @@ Windows 10, Linux, Mac
    ```bash
       $ sudo apt update
       $ sudo apt upgrade
-      $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      $ curl -fsSL https://deb.nodesource.com/setup_16.x |sudo -E bash -
       $ sudo apt install -y nodejs
       $ node -v
    ```
