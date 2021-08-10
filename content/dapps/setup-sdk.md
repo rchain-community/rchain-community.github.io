@@ -17,11 +17,11 @@ Windows 10, Linux, Mac
 1. Type in the following commands in the ubuntu terminal for installing node 16:
 
    ```bash
-   $ sudo apt update
-   $ sudo apt upgrade
-   $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-   $ sudo apt install -y nodejs
-   $ node -v
+      $ sudo apt update
+      $ sudo apt upgrade
+      $ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      $ sudo apt install -y nodejs
+      $ node -v
    ```
 
    The node version has to be 16 or higher.
@@ -34,30 +34,30 @@ Windows 10, Linux, Mac
    If there is not git clone to select, you have to install it:
 
    ```bash
-   $ sudo apt-get install git
+      $ sudo apt-get install git
    ```
 
    After installing git, click on git clone and type in:
 
    ```bash
-   https://github.com/tgrospic/rnode-client-js-dev-test.git
+      https://github.com/tgrospic/rnode-client-js-dev-test.git
    ```
 
    ![vscode1](./images/vscode-10.png)  
    Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
 
-4. Now install docker on your machine: Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
-   ![vscode1](./images/vscode-11.png)
+4. Now install docker on your machine: Open a terminal in vscode (Terminal ➜ New Terminal). Then open a new bash windows.
+   ![vscode1](./images/vscode-12.png)
 
    ```bash
-   $ sudo apt install docker.io
-   $ sudo systemctl enable --now docker
+      $ sudo apt install docker.io
+      $ sudo systemctl enable --now docker
    ```
 
-5. Type into the command promt:
+5. Type into the terminal:
 
    ```bash
-   $ docker-compose up -d
+      $ docker-compose up -d
    ```
 
 ### Windows 10
