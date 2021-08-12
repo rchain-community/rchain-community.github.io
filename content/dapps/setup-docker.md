@@ -46,7 +46,7 @@ Windows 10, Linux, Mac
    ![vscode1](./images/vscode-10.png)  
    Select the folder you want to download the files. After it has downloaded the repo, click on the button **Open** on the right bottom in vscode.
 
-4. Now install docker on your machine: Open a terminal in vscode (Terminal ➜ New Terminal). Then open a Command Prompt (not powershell)
+4. Now install docker on your machine: Open a terminal in vscode (Terminal ➜ New Terminal). Then type into the bash:
    ![vscode1](./images/vscode-11.png)
 
    ```bash
