@@ -8,11 +8,9 @@ Rholang is completely asynchronous, in the sense that while you can read a messa
 
 **Rholang language specification:**
 
-[Language specification 0.2](https://developer.rchain.coop/assets/rholang-spec-0.2.pdf)
+[Language specification 0.2](./pdf/rholang-spec-0.2.pdf)
 
-[Language specification 1.1](./pdf/Rholang_V11.pdf)
-
-[Language specification 1.1 additional examples](./pdf/rholang-spec-1-1-extra.pdf)
+[Language specification 1.1](./pdf/rholang-spec-1.1.pdf)
 
 ## VSCode Plugin
 
