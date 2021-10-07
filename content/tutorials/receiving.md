@@ -115,7 +115,6 @@ new result, pizzaShop in {
 }
 ```
 
-
 Which of these things is not like the other?
 - [x] `for (a <- b){}`
 - [ ] `contract b(a) = {}`
