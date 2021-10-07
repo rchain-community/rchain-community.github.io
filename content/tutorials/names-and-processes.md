@@ -55,7 +55,7 @@ Did you notice the `*` in `bob!(*message)`? In rholang there are two kinds of th
 
 <!-- TODO: Maybe an illustration of arrows labeled * and @ would be better here? -->
 
-A "process" is any piece of rholang code such as our telephone game, or our pizza shop order program. Processes can be big hundred-line programs or small on-liners. They can even be tiny pieces of code that are just values.  Here are some example processes.
+A "process" is any piece of rholang code such as our telephone game, or our pizza shop order program. Processes can be big hundred-line programs or small one-liners. They can even be tiny pieces of code that are just values.  Here are some example processes.
 
  - `result!("Sup Rholang?")` A common send
  - `Nil` The smallest possible process. It literally means "do nothing".
