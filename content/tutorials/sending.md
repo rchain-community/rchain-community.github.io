@@ -29,7 +29,7 @@ We created the channel `result` on the first line of the program with `new resul
 
 ![Sent messages wait to be received here in "message purgatory"... JK, it's called the "tuplespace"](./images/sending-mailboxes.png)
 
-You can actually send messages on lots of channels, not just `result`. The result will be the first name introduces when we `explore` read only. For deploys on rchain we use a special name for resuls anyname(`rho:rchain:deployId) to get the result of a deploy. More on that later.
+You can actually send messages on lots of channels, not just `result`. The result will be the first name introduced when we `explore` read only. For deploys on rchain we use a special name for results anyname(`rho:rchain:deployId) to get the result of a deploy. More on that later.
 
 ```javascript
 new result, randoChannel in {
