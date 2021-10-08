@@ -1,4 +1,4 @@
-# Unforgable Names
+# Unforgeable Names
 
 We've learned how to receive messages with `for` and `contract`. Both of these constructs "bind" variables. A variable is considered bound if has an actual value (a channel or a process) attached to it.
 
