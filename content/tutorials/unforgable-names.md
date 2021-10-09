@@ -161,7 +161,7 @@ Bob also wants to order a pizza and give a unforgeable ack channel. Where should
 Now that you understand ack channels, you should know about ways to print to the rnode log file. They are channels called `stdout`, `stderr`, `stdoutAck` and `stderrAck`. They work just like their cousins `result` from lesson 1, but they print to the rnode log.
 
 ```javascript
-new myAckChannel,
+new result, myAckChannel,
     stdout(`rho:io:stdout`),
     stdoutAck(`rho:io:stdoutAck`) in {
     
