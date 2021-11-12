@@ -18,8 +18,8 @@
         Rholang is an open and scalable blockchain language designed for speed,
         reliability and formal process orchestration build on latest research in the
         reflective high order process calculus. 
-        Rholang runs on the <a href="https://rchain.coop">Rchain</a> world computer 
-        algorithically constrained to obey our rules.
+        Rholang runs on the <a href="https://rchain.coop" color="white">Rchain</a> world computer 
+        algorithmically constrained to obey our rules.
       </p>
       <p class="intro__links">
         <g-link to="/docs/" class="button primary button--large">
