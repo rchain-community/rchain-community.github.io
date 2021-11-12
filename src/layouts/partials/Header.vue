@@ -71,10 +71,10 @@
               >Rchain Toolkit</a
             >
             <a
-              href="https://github.com/arvinxx/my-rchain-wallet"
+              href="https://github.com/rchain-community/rchain-wallet"
               rel="noopener noreferrer"
               target="_blank"
-              >MyRchainWallet</a
+              >RchainWallet</a
             >
             <a
               href="https://github.com/imphila/Capo"
