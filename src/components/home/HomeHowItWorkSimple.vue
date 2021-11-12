@@ -4,6 +4,11 @@
       <Card class="text-center" title="Write a smart contract">
         <h4>IDEs</h4>
         <ul class="bullet-list mb">
+        <li>
+            <a href="https://rchain-community.github.io/rgov/">RChain Cloud</a>
+          </li>
+
+          <br />
           <li>
             <a href="https://rchain-community.github.io/dapps/vscode-extension/"
               >Visual Studio Code Plugin</a
@@ -16,11 +21,7 @@
             >
           </li>
           <br />
-          <li>
-            <a href="https://rchain-community.github.io/rgov/">RChain Cloud</a>
-          </li>
-
-          <br />
+          
           <li>
             <a href="https://github.com/tgrospic/rholang-idea"
               >Intellij Plugin</a
