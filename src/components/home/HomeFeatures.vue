@@ -47,7 +47,7 @@
         <p style=" text-align: left">
           The Rholang developer ecosystem is growing. With a new type-safe api,
           dApps can be written for Rchain. Many dApps like RChain-Status, Dappy,
-          MyRchainWallet, nth-caller-game, RSign, RCat and many more are
+          RchainWallet, nth-caller-game, RSign, RCat and many more are
           developed by the community. Tutorials and an upgraded RNode API makes
           it easy for new developer to come onboard.
         </p>
@@ -108,7 +108,7 @@
         <p>Try to write Rholang code and compile it online</p>
       </FeatureCard>
 
-      <FeatureCard link="https://myrchainwallet.com">
+      <FeatureCard link="https://www.rchainwallet.com">
         <h3>💼 Rchain Wallet</h3>
         <p>Community driven Rchain Wallet</p>
       </FeatureCard>
