@@ -9,17 +9,19 @@
           <div v-show="currentText == 0" key="0">new concurrent language</div>
           <div v-show="currentText == 1" key="1">performant language</div>
           <div v-show="currentText == 2" key="2">blockchain language</div>
-          <div v-show="currentText == 3" key="3">language for distributed computing</div>
+          <div v-show="currentText == 3" key="3">
+            language for distributed computing
+          </div>
           <div v-show="currentText == 4" key="4">community language</div>
         </transition-group>
       </h1>
 
       <p class="intro__lead lead post mb">
         Rholang is an open and scalable blockchain language designed for speed,
-        reliability and formal process orchestration build on latest research in the
-        reflective high order process calculus. 
-        Rholang runs on the <a href="https://rchain.coop" style="color:red;">Rchain</a> world computer 
-        algorithmically constrained to obey our rules.
+        reliability and formal process orchestration build on latest research in
+        the reflective high order process calculus. Rholang runs on the
+        <a href="https://rchain.coop" style="color:aquamarine;">Rchain</a> world
+        computer algorithmically constrained to obey our rules.
       </p>
       <p class="intro__links">
         <g-link to="/docs/" class="button primary button--large">
@@ -42,11 +44,11 @@ query {
 export default {
   data() {
     return {
-      currentText: 0
+      currentText: 0,
     };
   },
   mounted() {
-    ($vm => {
+    (($vm) => {
       (function animate() {
         $vm._counter = setTimeout(() => {
           $vm.currentText = ($vm.currentText + 1) % 5;
@@ -57,7 +59,7 @@ export default {
   },
   destroyed() {
     clearTimeout(this._counter);
-  }
+  },
 };
 </script>
 
