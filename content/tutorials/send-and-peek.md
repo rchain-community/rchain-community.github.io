@@ -112,7 +112,7 @@ Which syntax is used to peek at a message?
 
 
 
-How many comms happen in `for (x <! y) {Nil} | y!!(Nil)`
+How many comms happen in `for (x <- y) {Nil} | y!!(Nil)`
 - [x] `1`
 - [ ] `many`
 - [ ] `0`
