@@ -1,8 +1,8 @@
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  siteName: 'Rholang Documentation for the Rchain network 🎓',
-  siteUrl: `siteUrl: 'https://rchain-community.github.io`,
+  siteName: 'Rholang.io: Documentation for the RChain network 🎓',
+  siteUrl: `siteUrl: 'https://rholang.io`,
   titleTemplate: '%s - Rchain network',
   siteDescription:
     '👉 Rholang is an open and scalable blockchain language designed for speed and reliability. Build on latest research from the reflective high order calculus.',
